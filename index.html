@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="author" content="نهى فائق"><meta name="copyright" content="جميع حقوق هذه النسخة التفاعلية محفوظة للمعلمة نهى فائق">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
+<title>كتاب الرياضيات التفاعلي – الصف الثامن</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Aref+Ruqaa:wght@700&display=swap">
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);--desk:#cfd9d1;--ink:#2f2619;--paper:#f8f1df;--vio:#5a35a8}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--desk:#1c2523}}
+html{scroll-padding-top:env(safe-area-inset-top,0px);color-scheme:light dark}
+*{box-sizing:border-box}
+body{margin:0;min-height:100%;background:radial-gradient(circle at 50% 0,color-mix(in srgb,var(--desk) 85%,#fff),var(--desk));font-family:Amiri,Tahoma,serif;color:var(--ink);padding:14px 10px 30px}
+.wrap{max-width:520px;margin:0 auto}
+.cov{background:linear-gradient(135deg,#6a43bd,#3d2178);padding:9px 9px 9px 13px;border-radius:12px;box-shadow:-3px 3px 0 #ece2c8,-6px 6px 0 #e2d6b6,-9px 9px 0 #d6c9a6,0 18px 30px rgba(0,0,0,.35)}
+.book{display:grid;perspective:1700px;transition:height .45s}
+.pg{grid-area:1/1;align-self:start;position:relative;background-color:var(--paper);background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2'/><feColorMatrix values='0 0 0 0 .4 0 0 0 0 .3 0 0 0 0 .15 0 0 0 .09 0'/></filter><rect width='120' height='120' filter='url(%23n)'/></svg>");border-radius:10px 3px 3px 10px;padding:16px 26px 42px 18px;transform-origin:right center;backface-visibility:hidden;pointer-events:none;transition:transform .95s cubic-bezier(.55,.05,.25,1),visibility 0s;color:var(--ink);line-height:1.8;overflow:hidden}
+.pg.cur{pointer-events:auto}
+.pg.fl{transform:rotateY(100deg);visibility:hidden;transition:transform .95s cubic-bezier(.55,.05,.25,1),visibility 0s .95s}
+.pg::before{content:"";position:absolute;top:0;bottom:0;right:0;width:28px;background:linear-gradient(to left,rgba(70,45,10,.28),transparent);pointer-events:none}
+.pg::after{content:"";position:absolute;inset:0;background:linear-gradient(to right,rgba(0,0,0,.55),transparent);opacity:0;transition:opacity .95s;pointer-events:none}
+.pg.fl::after{opacity:1}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@keyframes ul{to{background-size:100% 100%}}
+@keyframes pop{0%{transform:scale(.2);opacity:0}70%{transform:scale(1.2)}100%{transform:scale(1);opacity:1}}
+@keyframes shake{25%{transform:translateX(5px)}75%{transform:translateX(-5px)}}
+@keyframes flt{50%{transform:translateY(-8px) rotate(3deg)}}
+.pg.cur .sc>*{animation:rise .6s both}
+.hd{display:flex;justify-content:space-between;font-size:.74rem;color:#7a6a4d;border-bottom:1px solid #d9ccaa;padding-bottom:3px}
+h2{font:700 1.65rem/1.35 "Aref Ruqaa",Amiri,serif;color:#3a1f7a;margin:10px 0 2px;width:fit-content;background:linear-gradient(transparent 62%,#ffd96bb0 62%) no-repeat right/0% 100%}
+.pg.cur .sc>h2{animation:rise .6s both,ul 1s .5s forwards}
+p{margin:0 0 8px;font-size:1.05rem}
+.fig{background:#fffaf0;border:1px solid #d9ccaa;border-radius:8px;padding:6px 6px 2px;box-shadow:0 2px 0 rgba(120,90,30,.12)}
+svg{display:block;width:100%;height:auto;font-family:Amiri,sans-serif}
+.cap{font:.78rem Amiri,sans-serif;color:#7a6a4d;text-align:center;padding:2px 0 4px}
+.sl{display:flex;gap:8px;align-items:center;font:.85rem Amiri,sans-serif;margin:2px 0}
+.sl span{min-width:68px}.sl input{flex:1;accent-color:var(--vio)}.sl b{min-width:34px;text-align:center;color:var(--vio)}
+.out{font:600 1rem Amiri,sans-serif;color:var(--vio);text-align:center;min-height:2.2em;margin:4px 0}
+.out sup,.fm sup,.ans sup{font-size:.7em;line-height:0}
+.fm{background:#efe6cb;border:1px dashed #b9a679;border-radius:6px;padding:6px 12px;text-align:center;font-size:1.2rem;margin:6px 0}
+.nt{background:#fff3c4;border-inline-start:4px solid #e0a82e;padding:5px 10px;font-size:.96rem;margin:8px 0;border-radius:0 4px 4px 0}
+.qh{font:600 .8rem Amiri,sans-serif;color:var(--vio);margin-top:10px}
+.qt{font:600 .95rem/1.7 Amiri,sans-serif}
+.op{display:flex;gap:10px;align-items:center;padding:3px 6px;cursor:pointer;font:.95rem Amiri,sans-serif;position:relative}
+.bx{width:18px;height:18px;border:2px solid var(--ink);border-radius:3px;position:relative;flex:none}
+.op .l{padding:0 14px;border-radius:50%;border:2px solid transparent}
+.op.ok .l{border-color:#d0342c;animation:pop .45s}
+.op.ok .bx::after{content:"✔";position:absolute;inset:-9px 0 0 1px;font-size:22px;color:#1b7a4a;animation:pop .4s}
+.op.no{animation:shake .35s}.op.no .bx::after{content:"✕";position:absolute;inset:-5px 0 0 2px;font-size:17px;color:#c0392b}
+.fb{position:relative;perspective:900px;margin-top:10px;min-height:86px}
+.ans{background:#f1e6c6;border:1px solid #d9c690;border-radius:6px;min-height:86px;padding:8px 12px;font-size:1rem;color:#3a2a10}
+.flap{position:absolute;inset:0;border-radius:6px;display:grid;place-items:center;font:600 1rem Amiri,sans-serif;color:var(--vio);cursor:pointer;background:repeating-linear-gradient(0deg,#eadcb2 0 7px,#e4d4a6 7px 8px);box-shadow:0 4px 10px rgba(0,0,0,.28);transform-origin:top;backface-visibility:hidden;transition:transform .9s cubic-bezier(.5,0,.2,1),opacity .3s .55s}
+.flap.up{transform:rotateX(172deg);opacity:0;pointer-events:none}
+.pn{position:absolute;bottom:10px;left:0;right:0;text-align:center;font-size:.9rem;color:#7a6a4d}
+.cvr{background:radial-gradient(circle at 30% 18%,#7a54cf,#3b1f78)!important;color:#f3d88a;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;box-shadow:inset 0 0 0 7px #4a2a92,inset 0 0 0 9px #f3d88a}
+.cvr h1{font:700 3.2rem "Aref Ruqaa",serif;margin:8px 0;text-shadow:0 2px 0 #1d0f45}
+.cvr h3{margin:0;font-weight:400;font-size:1.3rem}
+.orn{width:110px;height:110px;border:3px double #f3d88a;border-radius:50%;display:grid;place-items:center;font:700 3.4rem "Aref Ruqaa",serif;animation:flt 3.5s ease-in-out infinite!important;margin:16px 0}
+.cvr small{opacity:.85}
+.e{text-align:center;display:flex;flex-direction:column;justify-content:center;align-items:center}
+.e button,.nv button{border:0;background:var(--vio);color:#fff;border-radius:99px;padding:8px 20px;font:600 .95rem Amiri,sans-serif;cursor:pointer}
+.nv{display:flex;justify-content:space-between;align-items:center;margin-top:16px;color:var(--ink)}
+.nv button:disabled{opacity:.35}
+#pi{font:.85rem Amiri,sans-serif;color:var(--ink)}
+.cvr{min-height:560px}
+.lvl{display:inline-block;margin-inline-start:8px;padding:0 10px;border-radius:99px;font-size:.75rem;color:#fff;background:#2e9e63}
+.lvl.l2{background:#e0a82e}.lvl.l3{background:#d0342c}
+.mpips{float:left;letter-spacing:2px;color:var(--vio);font-size:.8rem}
+.fbk{font-size:.95rem;margin:6px 0;color:#3a2a10}
+.fbk sup,.qt sup,.op sup{font-size:.7em;line-height:0}
+.more{border:2px dashed var(--vio);background:none;color:var(--vio);border-radius:99px;padding:4px 16px;font:600 .85rem Amiri,sans-serif;cursor:pointer;margin-top:4px}
+.ex{background:#fff9e2;border:1px solid #ead9a0;border-radius:6px;padding:6px 10px;margin-top:10px}
+.ex b{color:var(--vio)}
+html{font-size:clamp(14px,min(4.1vw,2.2vh),18px)}
+html,body{height:100%;overflow:hidden;overscroll-behavior:none;touch-action:manipulation;-webkit-text-size-adjust:100%;-webkit-user-select:none;user-select:none}
+body{padding:0;min-height:0}
+.wrap{max-width:none;margin:0;height:var(--H,100dvh);display:flex;flex-direction:column;align-items:center;padding:8px}
+.cov{flex:1;min-height:0;width:min(100%,calc((var(--H,100dvh) - 90px)*.82));max-width:640px;display:flex}
+.book{flex:1;min-width:0;min-height:0;grid-template-columns:minmax(0,1fr);grid-template-rows:minmax(0,1fr)}
+.pg{align-self:stretch;min-height:0;padding:0;display:flex;flex-direction:column}
+.sc{flex:1;min-height:0;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;padding:16px 26px 46px 18px;scrollbar-width:none}
+.sc::-webkit-scrollbar{display:none}
+.pn{background:linear-gradient(transparent,var(--paper) 55%);padding-top:16px;bottom:0;z-index:2}
+.cvr{display:flex;align-items:stretch;justify-content:flex-start;min-height:0}
+.cvr .sc,.e .sc{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.e{display:flex}
+svg{max-height:calc(var(--H,100dvh)*.34)}
+.nv{width:min(100%,calc((var(--H,100dvh) - 90px)*.82));max-width:640px;margin-top:8px;flex:none}
+input[type=range]{touch-action:pan-x}
+
+.fx{display:inline-flex;flex-direction:column;vertical-align:middle;text-align:center;line-height:1.3;margin:0 .15em;font-size:.95em;direction:rtl}
+.fx>span{display:block;padding:0 .25em}
+.fx>span:first-child{border-bottom:1.6px solid currentColor}
+.fx.cf>span:first-child{border-bottom-width:2px;padding-bottom:.1em}
+.fx.cf>span:last-child{padding-top:.1em}
+.fx .fx{font-size:.85em}
+.cov{position:relative}
+.sc{padding-bottom:100px}
+#gd{position:absolute;left:4px;bottom:2px;z-index:60;width:66px;cursor:pointer;touch-action:manipulation;filter:drop-shadow(0 3px 4px rgba(0,0,0,.3))}
+#gd svg{max-height:none;width:100%;height:auto;animation:bob 3s ease-in-out infinite;transform-origin:50% 100%;background:none;overflow:visible}
+#gd .eye{transform-box:fill-box;transform-origin:center;animation:blk 4.2s infinite}
+@keyframes bob{50%{transform:translateY(-4px) rotate(2deg)}}
+@keyframes blk{0%,94%,100%{transform:scaleY(1)}97%{transform:scaleY(.1)}}
+@keyframes jmp{0%,100%{transform:none}30%{transform:translateY(-26px) rotate(-8deg)}60%{transform:translateY(0) rotate(6deg)}}
+@keyframes shk{25%{transform:rotate(-7deg)}75%{transform:rotate(7deg)}}
+#gd.cheer svg{animation:jmp .7s 2}
+#gd.sad svg{animation:shk .5s 2}
+#gb{position:absolute;left:8px;bottom:104px;max-width:min(80%,320px);background:#fffaf0;color:#2f2619;border:2px solid #5a35a8;border-radius:16px 16px 16px 4px;padding:8px 12px;font:600 .92rem/1.6 Amiri,sans-serif;box-shadow:0 4px 12px rgba(0,0,0,.25);z-index:61;opacity:0;transform:translateY(8px) scale(.95);transition:.25s;pointer-events:none;direction:rtl}
+#gb.on{opacity:1;transform:none;pointer-events:auto}
+#gb small{font-weight:400;color:#6d6a78}
+#gb input{width:100%;margin:4px 0;font:inherit;font-size:16px;padding:4px 8px;border:2px solid #c9b6f5;border-radius:10px;text-align:center;-webkit-user-select:text;user-select:text;background:#fff;color:#2f2619}
+#gb button{border:0;background:#5a35a8;color:#fff;border-radius:99px;padding:4px 20px;font:inherit;cursor:pointer}
+.op.gone{display:none}
+@media (prefers-reduced-motion:reduce){#gd svg,#gd .eye{animation:none!important}}
+.rt{display:inline-flex;align-items:stretch;direction:rtl;unicode-bidi:isolate;vertical-align:middle;margin:0 .1em;white-space:nowrap}
+.rt .rs{flex:none;width:.7em;transform:scaleX(-1);background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 24' preserveAspectRatio='none'><path d='M.6 14.5L3 12.5 6.2 22 11.4 .8H12' fill='none' stroke='%232f2619' stroke-width='1.6' vector-effect='non-scaling-stroke' stroke-linejoin='round'/></svg>") no-repeat;background-size:100% 100%}
+.rt .ov{border-top:1.6px solid #2f2619;padding:.1em .22em 0;line-height:1.4}
+.rt .ix{font-size:.55em;align-self:flex-start;margin:.35em 0 0 -.25em;line-height:1}
+.tm{display:inline-flex;direction:rtl;unicode-bidi:isolate;align-items:center;white-space:nowrap}
+.m{white-space:nowrap}
+.fm,.out{white-space:nowrap}
+.sc{padding-bottom:76px}
+#gd{width:50px;left:3px;bottom:1px}
+#gb{left:58px;bottom:26px;max-width:calc(100% - 72px);font:600 .78rem/1.5 Amiri,sans-serif;padding:3px 10px;border-width:1.5px;border-radius:12px 12px 12px 3px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.22)}
+#gb.big{display:block;padding:4px 10px}
+#gb input{width:6em;display:inline-block;margin:0 4px;font-size:16px;padding:1px 6px}
+#gb button{padding:1px 14px}
+.spk,.mic{border:0;background:none;font-size:1.05rem;cursor:pointer;padding:0 5px;vertical-align:middle}
+.nomic .mic{display:none}
+.altb{border:2px dashed #e0a82e;background:none;color:#7a5a00;border-radius:99px;padding:4px 14px;font:600 .85rem Amiri,sans-serif;cursor:pointer;margin:4px 6px 0 0}
+.alt{display:none;background:#fff9e2;border:1px solid #ead9a0;border-radius:10px;margin-top:8px;padding:6px 10px}
+.alt.on{display:block;animation:rise .35s}
+.tabs{display:flex;gap:6px;margin-bottom:6px}
+.tabs b{flex:1;text-align:center;padding:3px 0;border-radius:99px;background:#efe6cb;cursor:pointer;font-size:.85rem}
+.tabs b.on{background:var(--vio);color:#fff}
+.atx{font-size:.95rem;line-height:1.8}.atx ol{margin:0;padding-inline-start:1.3em}
+#wq,#we,.wi{width:100%;font:inherit;font-size:16px;padding:6px 10px;border:2px solid #d9ccaa;border-radius:10px;background:#fffdf5;color:var(--ink);-webkit-user-select:text;user-select:text;margin:3px 0}
+.wo{display:flex;align-items:center;gap:8px}.wo input[type=radio]{accent-color:var(--vio);width:20px;height:20px;flex:none}
+.tb{display:flex;gap:6px;margin:6px 0}.tb button{flex:1;border:1.5px solid #d9ccaa;background:#f1e6c6;border-radius:8px;padding:3px 0;font:inherit;cursor:pointer}
+.hint{font-size:.78rem;color:#7a6a4d;margin-bottom:6px}
+.lk{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}.lk input{flex:1 1 100%;font-size:12px;direction:ltr;padding:4px;border:1px solid #d9ccaa;border-radius:8px;-webkit-user-select:text;user-select:text}
+.lk button{border:0;background:var(--vio);color:#fff;border-radius:99px;padding:4px 14px;font:inherit;cursor:pointer}
+.cp{display:block;margin-top:16px;font-size:.72rem;line-height:1.6;opacity:.9;text-align:center}.cp.dk{color:#7a6a4d}
+#gd.gold{filter:drop-shadow(0 0 7px #ffd54f)}
+.bh{display:flex;flex-direction:column;gap:2px;background:#fff9e2;border:1px solid #ead9a0;border-radius:10px;padding:8px 12px;margin:8px 0}
+.bh b{font-size:1.15rem;color:var(--vio)}
+.bp{display:flex;align-items:center;gap:8px;margin:6px 0;font-size:.85rem}
+.bar{flex:1;height:8px;background:#e4d8b8;border-radius:99px;overflow:hidden}.bar i{display:block;height:100%;background:var(--vio);transition:width .4s}
+.br{text-align:center;margin:8px 0}.bigp{font:700 2.6rem "Aref Ruqaa",Amiri,serif;color:var(--vio);line-height:1.2}.st3{font-size:1.6rem;color:#e0a82e;letter-spacing:4px}
+.lvs{display:flex;gap:6px;justify-content:center;flex-wrap:wrap;margin:6px 0}.lvs .lvl{margin:0}
+.mh{font-weight:700;margin:10px 0 4px;color:#7a1f2b}
+.ms{background:#fff3ee;border:1px solid #f0cfc4;border-radius:8px;padding:5px 10px;margin:4px 0;font-size:.92rem}.mr{color:#1b7a4a}
+.bbt{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+html{--t1:#a46d3a;--t2:#7a4a25;--gr:.16;background:var(--t2)}
+html[data-table=dark]{--t1:#4d372a;--t2:#2d1f17;--gr:.22}
+html[data-table=felt]{--t1:#3a6b52;--t2:#264a39;--gr:0}
+html{font-size:calc(clamp(14px,min(4.1vw,2.2vh),18px)*var(--fs,1))}
+body{background:radial-gradient(ellipse 85% 50% at 28% 6%,rgba(255,226,170,.34),transparent 70%),radial-gradient(ellipse 120% 40% at 50% 112%,rgba(0,0,0,.5),transparent 70%),repeating-linear-gradient(91deg,transparent 0 6px,rgba(45,22,5,var(--gr)) 6px 7px,rgba(255,225,175,calc(var(--gr)*.35)) 7px 12px),repeating-linear-gradient(90deg,rgba(0,0,0,.06) 0 2px,transparent 2px 47px),linear-gradient(180deg,var(--t1),var(--t2))}
+.cov{box-shadow:-3px 3px 0 #ece2c8,-6px 6px 0 #e2d6b6,-9px 9px 0 #d6c9a6,-12px 14px 14px -4px rgba(0,0,0,.45),10px 26px 36px -6px rgba(0,0,0,.65),0 40px 60px -20px rgba(0,0,0,.5)}
+.cov::after{content:"";position:absolute;inset:0;border-radius:12px;background:linear-gradient(118deg,rgba(255,240,205,.17),transparent 42%);pointer-events:none;z-index:5}
+.nv{color:#f6e8cf;gap:6px}#pi{color:#f6e8cf;font-size:.82rem;text-shadow:0 1px 2px rgba(0,0,0,.5);flex:1;text-align:center}
+.nv .ib{width:40px;height:40px;padding:0;font-size:1.1rem;border-radius:50%;flex:none}
+#sh{position:fixed;inset:0;background:rgba(10,5,0,.55);display:none;z-index:200;align-items:flex-end;justify-content:center}
+#sh.on{display:flex}
+.shb{position:relative;width:min(100%,580px);max-height:80%;overflow-y:auto;overscroll-behavior:contain;background:#fbf4e4;color:#2f2619;border-radius:18px 18px 0 0;padding:14px 16px 26px;animation:rise .25s both;-webkit-user-select:none}
+.shb h3{margin:0 0 6px;font:700 1.3rem "Aref Ruqaa",Amiri,serif;color:var(--vio)}
+.shx{position:absolute;left:10px;top:8px;border:0;background:#efe6cb;border-radius:50%;width:32px;height:32px;cursor:pointer;font-size:1rem}
+.ixu{margin:10px 0 2px;font-weight:700;color:#7a6a4d;font-size:.85rem}
+.ixr{display:flex;align-items:center;gap:6px;padding:5px 0;border-bottom:1px dashed #d9ccaa}
+.ixt{flex:1;font-size:.9rem}.ixp{font-size:.75rem;color:#7a6a4d;min-width:36px;text-align:center}
+.ixr button,.sb{border:1.5px solid #d9ccaa;background:#f1e6c6;border-radius:99px;padding:3px 12px;font:inherit;font-size:.82rem;cursor:pointer;color:#2f2619}
+.sb.on{background:var(--vio);color:#fff;border-color:var(--vio)}
+.sr{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:8px 0;border-bottom:1px dashed #d9ccaa;flex-wrap:wrap}
+.sr>div{display:flex;gap:6px;flex-wrap:wrap}.sr input{font-size:16px;width:7em;padding:3px 8px;border:1.5px solid #d9ccaa;border-radius:10px;background:#fffdf5;-webkit-user-select:text;user-select:text}
+.lite .pg,.lite .pg.fl{transition:none!important}
+.lite #gd svg,.lite #gd .eye{animation:none!important}
+.lite .pg.cur .sc>*,.lite .pg.cur .sc>h2{animation:none!important}
+.lite h2{background-size:100% 100%!important}
+.nopen #gd,.nopen #gb{display:none!important}
+.nv button{padding:8px 14px}.nv .ib{padding:0}#pi{white-space:nowrap;font-size:.78rem}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin:6px 0}.chips span{background:#efe6cb;border-radius:99px;padding:2px 12px;font-size:.85rem}
+.sg{display:flex;align-items:center;gap:8px;background:#fff9e2;border:1px solid #ead9a0;border-radius:12px;padding:7px 10px;margin:6px 0}
+.sgi{font-size:1.4rem;flex:none}.sgt{flex:1;font-size:.95rem}
+.sg button,.tl button{border:1.5px solid var(--vio);background:#fff;color:var(--vio);border-radius:99px;padding:3px 12px;font:600 .85rem Amiri,sans-serif;cursor:pointer;flex:none}
+.tl{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:6px 0}.tl button{padding:8px 6px;border-radius:12px;font-size:.92rem}
+.tmr{margin-inline-start:auto;font-weight:700;color:var(--vio)}.tmr.low{color:#c0392b;animation:rise .6s infinite alternate}
+.mini{width:54px;height:7px;border-radius:99px;background:#e4d8b8;overflow:hidden;flex:none}.mini i{display:block;height:100%;background:var(--vio)}
+.bh.ex{border-color:var(--vio);background:#f3ecff}
+.dcs{display:flex;flex-direction:column;gap:6px;margin:8px 0}
+.dln{display:flex;gap:8px;align-items:flex-start;background:#fffdf5;border:2px solid #e0d6bc;border-radius:10px;padding:6px 10px;cursor:pointer}
+.dnn{background:#efe6cb;border-radius:50%;width:22px;height:22px;display:grid;place-items:center;font-size:.8rem;flex:none}
+.dtx{flex:1;line-height:1.8}
+.dln.ok{border-color:#1f9d55;background:#e9f8ef}.dln.no{border-color:#d64545;background:#fdeeee}.dln.bd{border-color:#d64545;border-style:dashed;background:#fff3ee}
+.cert svg{width:100%;height:auto;max-height:none;box-shadow:0 2px 10px rgba(0,0,0,.25);border-radius:4px}
+@media print{@page{size:landscape;margin:8mm}body.pc>*:not(#sh){display:none!important}body.pc #sh{position:static!important;display:block!important;background:#fff!important;transform:none!important}body.pc .shb{box-shadow:none;max-height:none;padding:0;animation:none;width:100%}body.pc .shb>*:not(.cert){display:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="cov"><div class="book" id="bk"></div></div>
+<div class="nv"><button id="nx">التالي ◂</button><button class="ib" id="ix" aria-label="الفهرس">☰</button><span id="pi"></span><button class="ib" id="st" aria-label="الإعدادات">⚙</button><button id="pv">▸ السابق</button></div>
+</div>
+<script>
+var AR='٠١٢٣٤٥٦٧٨٩',S='<sup>٢</sup>',Q='<tspan dy="-6" font-size="10">٢</tspan>',INK='#2f2619';
+function ar(s){return String(s).replace(/\d/g,function(d){return AR[d]}).replace(/\./g,'٫')}
+function $(i){return document.getElementById(i)}
+var T=function(x,y,t,z){return '<text x="'+x+'" y="'+y+'" font-size="'+(z||14)+'" text-anchor="middle" fill="'+INK+'">'+t+'</text>'};
+var HL=function(x1,x2,y,t){return '<path d="M'+x1+' '+y+'H'+x2+'M'+x1+' '+(y-4)+'V'+(y+4)+'M'+x2+' '+(y-4)+'V'+(y+4)+'" stroke="'+INK+'" fill="none"/>'+T((x1+x2)/2,y-7,t)};
+var VL=function(y1,y2,x,t){return '<path d="M'+x+' '+y1+'V'+y2+'M'+(x-4)+' '+y1+'H'+(x+4)+'M'+(x-4)+' '+y2+'H'+(x+4)+'" stroke="'+INK+'" fill="none"/>'+T(x-10,(y1+y2)/2+5,t)};
+var lab=function(x,y,t,r){return '<text transform="translate('+x+' '+y+') rotate('+(r||0)+')" text-anchor="middle" font-size="14" font-weight="700" fill="#5a35a8" stroke="#f8f1df" stroke-width="4" paint-order="stroke" stroke-linejoin="round">'+t+'</text>'};
+
+function d0(v){var a=v[0],s=100,A=a*20,x=34,y=34,
+ R=function(X,Y,w,h,c,t){return '<rect x="'+X+'" y="'+Y+'" width="'+w+'" height="'+h+'" rx="4" fill="'+c+'" stroke="'+INK+'" stroke-width="1.6"/>'+(w>30&&h>30?T(X+w/2,Y+h/2+5,t,w>90&&h>90?20:14):'')};
+ return [R(x,y,s,s,'#c9b6f5','س'+Q)+R(x+s,y,A,s,'#f8cf80','أس')+R(x,y+s,s,A,'#f8cf80','أس')+R(x+s,y+s,A,A,'#9edab6',ar(a*a))+HL(x,x+s,y-12,'س')+HL(x+s,x+s+A,y-12,'أ')+VL(y,y+s,x-12,'س')+VL(y+s,y+s+A,x-12,'أ'),
+ '0 0 '+(x+s+A+14)+' '+(y+s+A+14),'(س + '+ar(a)+')'+S+' = س'+S+' + '+ar(2*a)+'س + '+ar(a*a)]}
+
+function d1(v){var L=v[0],D=Math.min(v[1],L),k=13,wx=232,gy=182,h=Math.sqrt(L*L-D*D),fx=wx-D*k,ty=gy-h*k,ok=Math.abs(h-8)<.05,sy=gy-8*k,
+ ux=(wx-fx)/(L*k),uy=(ty-gy)/(L*k),n=Math.max(3,Math.round(L*1.5)),rg='',my=(gy+ty)/2,mx=(fx+wx)/2,
+ ln=function(s){return '<line x1="'+(fx-s*uy*4)+'" y1="'+(gy+s*ux*4)+'" x2="'+(wx-s*uy*4)+'" y2="'+(ty+s*ux*4)+'" stroke="#8a5a1f" stroke-width="3.5" stroke-linecap="round"/>'};
+ for(var i=1;i<n;i++){var q=i/n,cx=fx+(wx-fx)*q,cy=gy+(ty-gy)*q;rg+='<line x1="'+(cx-uy*4)+'" y1="'+(cy+ux*4)+'" x2="'+(cx+uy*4)+'" y2="'+(cy-ux*4)+'" stroke="#8a5a1f" stroke-width="2"/>'}
+ var hi=Math.abs(h-Math.round(h))<1e-9;
+ return ['<defs><pattern id="ht" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><path d="M0 0V7" stroke="#b8a77f" stroke-width="1.4"/></pattern></defs>'+
+ '<rect x="'+wx+'" y="4" width="'+(300-wx)+'" height="'+(gy-4)+'" fill="url(#ht)" stroke="'+INK+'" stroke-width="1.6"/>'+
+ '<rect x="240" y="'+(sy-14)+'" width="36" height="28" rx="2" fill="'+(ok?'#ffe58a':'#e6f0f8')+'" stroke="'+INK+'" stroke-width="1.6"/><path d="M258 '+(sy-14)+'V'+(sy+14)+'M240 '+sy+'H276" stroke="'+INK+'"/>'+
+ '<rect x="0" y="'+gy+'" width="300" height="12" fill="url(#ht)"/><path d="M0 '+gy+'H300" stroke="'+INK+'" stroke-width="2"/>'+
+ '<polygon points="'+fx+','+gy+' '+wx+','+gy+' '+wx+','+ty+'" fill="rgba(90,53,168,.12)" stroke="#5a35a8" stroke-dasharray="4 3"/>'+
+ '<path d="M'+(wx-10)+' '+gy+'V'+(gy-10)+'H'+wx+'" fill="none" stroke="#5a35a8" stroke-width="1.5"/>'+
+ '<rect x="'+(wx-8)+'" y="'+(sy-2)+'" width="9" height="4" fill="'+(ok?'#2e9e63':'#e0a82e')+'" stroke="'+INK+'"/>'+
+ ln(1)+ln(-1)+rg+'<circle cx="'+wx+'" cy="'+ty+'" r="4" fill="#5a35a8"/>'+
+ '<path d="M294 '+ty+'V'+gy+'M290 '+ty+'H298M290 '+gy+'H298" stroke="'+INK+'"/>'+lab(285,my,ar(+h.toFixed(1))+' م',-90)+
+ '<path d="M'+fx+' '+(gy+17)+'H'+wx+'M'+fx+' '+(gy+13)+'V'+(gy+21)+'M'+wx+' '+(gy+13)+'V'+(gy+21)+'" stroke="'+INK+'"/>'+lab(mx,gy+34,ar(D)+' م')+
+ lab(mx+uy*16,my-ux*16,ar(L)+' م',Math.atan2(uy,ux)*180/Math.PI),
+ '0 0 300 224',ar(D)+S+' + '+ar(+h.toFixed(1))+S+(hi?' = ':' ≈ ')+ar(L)+S+(ok?' · ✔ وصل إلى النافذة':'')]}
+
+function dec(n,d){var ip=Math.floor(n/d),r=n%d,sn={},dg='';
+ while(r&&!(r in sn)&&dg.length<30){sn[r]=dg.length;r*=10;dg+=Math.floor(r/d);r%=d}
+ if(!r)return ar(ip+(dg?'.'+dg:''))+' (منتهٍ)';
+ var s=sn[r];return ar(ip)+'٫'+ar(dg.slice(0,s))+'<span style="text-decoration:overline">'+ar(dg.slice(s))+'</span> (دوري)'}
+function d2(v){var n=v[0],d=v[1],W=260,x=20,y=24,sh=Math.min(n,d),g='',i;
+ for(i=0;i<d;i++)g+='<rect x="'+(x+W-W/d*(i+1))+'" y="'+y+'" width="'+(W/d)+'" height="46" fill="'+(i<sh?'#f3a6c0':'#fffaf0')+'" stroke="'+INK+'" stroke-width="1.6"/>';
+ return [g+T(150,108,ar(n),26)+'<path d="M130 116H170" stroke="'+INK+'" stroke-width="2"/>'+T(150,146,ar(d),26),'0 0 300 160',F(ar(n),ar(d))+' = '+dec(n,d)]}
+
+function d3(v){var nm=['التفاح','البلح','الموز'],cl=['#f4a6a0','#d9b48f','#f6df7a'],Tt=v[0]+v[1]+v[2],a0=-Math.PI/2,g='',i,th,x1,y1;
+ for(i=0;i<3;i++){th=v[i]/Tt*2*Math.PI;x1=95+80*Math.cos(a0);y1=100+80*Math.sin(a0);
+  g+='<path d="M95 100L'+x1+' '+y1+'A80 80 0 '+(th>Math.PI?1:0)+' 1 '+(95+80*Math.cos(a0+th))+' '+(100+80*Math.sin(a0+th))+'Z" fill="'+cl[i]+'" stroke="'+INK+'" stroke-width="1.6" stroke-linejoin="round"/>';a0+=th;
+  g+='<rect x="196" y="'+(52+i*34)+'" width="16" height="16" rx="3" fill="'+cl[i]+'" stroke="'+INK+'"/>'+T(254,65+i*34,nm[i]+': '+ar(Math.round(v[i]/Tt*360))+'°',13)}
+ return [g,'0 0 300 200','المجموع '+ar(Tt)+' · الزاوية = '+F('العدد',ar(Tt))+' × ٣٦٠°']}
+
+var MR=/^[\d٠-٩٫.,+\-−×÷=<>≈≠±()\[\]°:%،؟!…∠²³سصعلمنأبدهجـ\/]+$/;
+function mw(el){var tk=[],fr=document.createDocumentFragment(),run=[],i,t;
+ [].slice.call(el.childNodes).forEach(function(n){
+  if(n.nodeType==3)n.nodeValue.split(/(\s+)/).forEach(function(w){if(w!=='')tk.push({n:document.createTextNode(w),s:/^\s+$/.test(w),m:!/^\s+$/.test(w)&&MR.test(w)})});
+  else tk.push({n:n,s:0,m:n.nodeType==1&&(n.tagName=='SUP'||(n.tagName=='SPAN'&&(!n.className||/\b(fx|rt|tm)\b/.test(n.className))))})});
+ function fl(){if(!run.length)return;var txt=run.reduce(function(a,x){return a+(x.n.textContent||'')},'');
+  if(txt.length<=40){var sp=document.createElement('span');sp.className='m';run.forEach(function(x){sp.appendChild(x.n)});fr.appendChild(sp)}else run.forEach(function(x){fr.appendChild(x.n)});run=[]}
+ for(i=0;i<tk.length;i++){t=tk[i];if(t.m)run.push(t);else if(t.s&&run.length&&tk[i+1]&&tk[i+1].m)run.push(t);else{fl();fr.appendChild(t.n)}}
+ fl();el.innerHTML='';el.appendChild(fr)}
+function fit1(el){el.style.fontSize='';el.style.whiteSpace='nowrap';var fs=parseFloat(getComputedStyle(el).fontSize),mn=fs*.62;while(el.scrollWidth>el.clientWidth+1&&fs>mn){fs-=.5;el.style.fontSize=fs+'px'}if(el.scrollWidth>el.clientWidth+1){el.style.fontSize='';el.style.whiteSpace='normal'}}
+function fitAll(){[].forEach.call(document.querySelectorAll('.fm,.out'),fit1)}
+function F(n,d){return '<span class="fx"><span>'+n+'</span><span>'+d+'</span></span>'}
+function CF(t,b){return '<span class="fx cf"><span>'+t+'</span><span>'+b+'</span></span>'}
+function rt(x){return '<span class="rt"><span class="rs"></span><span class="ov">'+x+'</span></span>'}
+function rt3(x){return '<span class="rt"><span class="ix">٣</span><span class="rs"></span><span class="ov">'+x+'</span></span>'}
+function tm(c,x){return '<span class="tm">'+c+rt(x)+'</span>'}
+var R=function(a,b){return a+Math.floor(Math.random()*(b-a+1))},P=function(a){return a[R(0,a.length-1)]},
+gcd=function(a,b){return b?gcd(b,a%b):a},
+sh=function(a){for(var i=a.length-1,j,t;i>0;i--){j=R(0,i);t=a[i];a[i]=a[j];a[j]=t}return a},
+cf=function(c){return c==1?'':ar(c)},
+oth=function(r,a){return a.filter(function(x){return x!=r})},
+S3='<sup>٣</sup>';
+function mc(q,r,w,a){var o=[r],i;for(i=0;i<w.length&&o.length<4;i++)if(o.indexOf(w[i])<0)o.push(w[i]);o=sh(o);return{q:q,o:o,r:o.indexOf(r),a:a}}
+var C=['ض، ض، ض','ض، ز، ض','ز، ض، ز','لا تكفي للتطابق'],TR=[[3,4,5],[6,8,10],[5,12,13],[8,15,17],[7,24,25],[9,12,15],[12,16,20],[15,20,25]];
+var B=[
+function(l){var d,n,v,x,e,f,g;
+ if(l==1){d=P([2,4,5,8,10]);n=R(1,d-1);v=+(n/d).toFixed(4);return mc('حوّل '+F(ar(n),ar(d))+' إلى كسر عشري:',ar(v),[ar(+(n/d+.1).toFixed(4)),ar(+(n/(d+1)).toFixed(3)),ar(+(d/n/10).toFixed(4))],F(ar(n),ar(d))+' = '+ar(v))}
+ if(l==2){d=P([3,6,7,9,11,12,15,20,25,40]);n=R(1,d-1);g=gcd(n,d);e=d/g;while(e%2==0)e/=2;while(e%5==0)e/=5;f=e==1;return mc('الكسر '+F(ar(n),ar(d))+' يعطي عدداً عشرياً:',f?'منتهٍ':'دوري',[f?'دوري':'منتهٍ'],f?'مقامه بعد الاختصار لا يحوي إلا العاملين ٢ و٥':'مقامه بعد الاختصار فيه عامل غير ٢ و٥ فتتكرر الأرقام')}
+ x=P([1,2,4,5,7,8]);return mc('اكتب العدد ٠٫<span style="text-decoration:overline">'+ar(x)+'</span> على صورة كسر:',F(ar(x),'٩'),[F(ar(x),'١٠'),F(ar(x),'٩٩'),F(ar(x+1),'٩')],'ن = ٠٫'+ar(x)+ar(x)+'… فـ ١٠ن − ن = '+ar(x)+' ومنها ن = '+F(ar(x),'٩'))},
+function(l){var k,m,j,q,p;
+ if(l==1){k=R(2,12);return mc('قيمة '+rt(ar(k*k))+' تساوي:',ar(k),[ar(k+1),ar(k-1),ar(2*k)],ar(k)+' × '+ar(k)+' = '+ar(k*k))}
+ if(l==2){if(R(0,1)){k=R(2,6);return mc('قيمة '+rt3(ar(k*k*k))+' تساوي:',ar(k),[ar(k+1),ar(k*k),ar(3*k)],ar(k)+' × '+ar(k)+' × '+ar(k)+' = '+ar(k*k*k))}
+  q=R(3,9);p=R(1,q-1);return mc('قيمة '+rt(F(ar(p*p),ar(q*q)))+' تساوي:',F(ar(p),ar(q)),[F(ar(q),ar(p)),F(ar(p*p),ar(q)),F(ar(p),ar(q*q))],'نأخذ جذر البسط وجذر المقام')}
+ k=R(5,12);m=R(2,5);j=R(2,k-1);return mc('قيمة '+rt(ar(k*k))+' + '+rt3(ar(m*m*m))+' − '+rt(ar(j*j))+' =',ar(k+m-j),[ar(k+m+j),ar(k-m+j),ar(k*k+m-j)],ar(k)+' + '+ar(m)+' − '+ar(j)+' = '+ar(k+m-j))},
+function(l){var n=P([2,3,5,6,7,8,10,11,12,13,14,15,17,18,19,20,21,22,23,24,26,27,28,29,30,32,35,40,45,50,60,70,80]),k=R(2,9),a=Math.floor(Math.sqrt(n)),s;
+ if(l==1)return mc('أي الأعداد التالية غير نسبي؟',''+rt(ar(n)),[''+rt(ar(k*k)),F(ar(R(1,8)),ar(R(9,13))),ar(R(1,9)/10)],'ليس لـ '+ar(n)+' جذر تربيعي صحيح فلا يُكتب كسراً');
+ if(l==2)return mc(''+rt(ar(n))+' يقع بين العددين:','بين '+ar(a)+' و '+ar(a+1),['بين '+ar(a+1)+' و '+ar(a+2),'بين '+ar(a-1)+' و '+ar(a),'بين '+ar(2*a)+' و '+ar(2*a+1)],ar(a*a)+' < '+ar(n)+' < '+ar((a+1)*(a+1)));
+ s=+Math.sqrt(n).toFixed(1);return mc('قدّر '+rt(ar(n))+' لأقرب جزء من عشرة:',ar(s),[ar(+(s+.1).toFixed(1)),ar(+(s-.1).toFixed(1)),ar(+(s+.3).toFixed(1))],'تقع بين '+ar(a)+' و '+ar(a+1)+' وأقرب قيمة هي '+ar(s))},
+function(l){var a=R(2,9),b=R(2,9);
+ if(l==1)return mc('الحد الأوسط في مفكوك (س + '+ar(a)+')'+S+' هو:',ar(2*a)+'س',[ar(a)+'س',ar(a*a)+'س',ar(2*a*a)+'س'],'٢ × '+ar(a)+' × س = '+ar(2*a)+'س');
+ if(l==2)return mc('مفكوك (س + '+ar(a)+')'+S+' يساوي:','س'+S+' + '+ar(2*a)+'س + '+ar(a*a),['س'+S+' + '+ar(a)+'س + '+ar(a*a),'س'+S+' + '+ar(a*a),'س'+S+' + '+ar(2*a)+'س + '+ar(2*a)],'س'+S+' + ٢ × '+ar(a)+'س + '+ar(a)+S);
+ return mc('مفكوك ('+ar(a)+'س − '+ar(b)+')'+S+' يساوي:',ar(a*a)+'س'+S+' − '+ar(2*a*b)+'س + '+ar(b*b),[ar(a*a)+'س'+S+' + '+ar(2*a*b)+'س + '+ar(b*b),ar(a*a)+'س'+S+' − '+ar(b*b),ar(a)+'س'+S+' − '+ar(2*a*b)+'س + '+ar(b*b)],'(أ − ب)'+S+' = أ'+S+' − ٢أب + ب'+S)},
+function(l){var k,p,q,m,n,pp;
+ if(l==1){k=R(2,7);p=R(1,6);q=R(2,9);pp=cf(p);return mc('حلّل: '+ar(k*p)+'س + '+ar(k*q),ar(k)+'('+pp+'س + '+ar(q)+')',[ar(k)+'('+pp+'س + '+ar(k*q)+')',ar(k*p)+'(س + '+ar(q)+')',ar(k)+'('+cf(q)+'س + '+ar(p)+')'],'العامل المشترك '+ar(k))}
+ if(l==2){m=R(1,9);n=R(1,9);while(n==m)n=R(1,9);return mc('حلّل: س'+S+' + '+ar(m+n)+'س + '+ar(m*n),'(س + '+ar(m)+')(س + '+ar(n)+')',['(س + '+ar(m)+')(س − '+ar(n)+')','(س + '+ar(m*n)+')(س + ١)','(س + '+ar(m+n)+')(س + '+ar(m*n)+')'],ar(m)+' × '+ar(n)+' = '+ar(m*n)+' و '+ar(m)+' + '+ar(n)+' = '+ar(m+n))}
+ m=R(3,10);n=R(1,m-1);return mc('حلّل: س'+S+' + '+cf(m-n)+'س − '+ar(m*n),'(س + '+ar(m)+')(س − '+ar(n)+')',['(س − '+ar(m)+')(س + '+ar(n)+')','(س + '+ar(m)+')(س + '+ar(n)+')','(س − '+ar(m)+')(س − '+ar(n)+')'],'حاصل الضرب −'+ar(m*n)+' ومجموعهما '+ar(m-n)+': العددان '+ar(m)+' و −'+ar(n))},
+function(l){var k,p,a,d;
+ if(l==1){k=R(2,12);return mc('حلّل: س'+S+' − '+ar(k*k),'(س − '+ar(k)+')(س + '+ar(k)+')',['(س − '+ar(k)+')'+S,'(س + '+ar(k)+')'+S,'(س − '+ar(k*k)+')(س + ١)'],ar(k*k)+' = '+ar(k)+S)}
+ if(l==2){p=R(2,6);k=R(2,9);return mc('حلّل: '+ar(p*p)+'س'+S+' − '+ar(k*k),'('+ar(p)+'س − '+ar(k)+')('+ar(p)+'س + '+ar(k)+')',['('+ar(p*p)+'س − '+ar(k)+')('+ar(p*p)+'س + '+ar(k)+')','('+ar(p)+'س − '+ar(k)+')'+S,'('+ar(p)+'س − '+ar(k*k)+')('+ar(p)+'س + ١)'],ar(p*p)+'س'+S+' = ('+ar(p)+'س)'+S)}
+ k=P([50,60,70,100]);d=R(2,8);a=k+d;return mc('احسب '+ar(a)+S+' − '+ar(k-d)+S+' دون حاسبة:',ar(4*d*k),[ar(2*d*k),ar(4*d*k+k),ar(4*d*k-100)],'('+ar(a)+' − '+ar(k-d)+')('+ar(a)+' + '+ar(k-d)+') = '+ar(2*d)+' × '+ar(2*k))},
+function(l){var t=P(l==3?TR:TR.slice(0,5)),a=t[0],b=t[1],c=t[2];
+ if(l==1)return mc('مثلث قائم ضلعا قائمته '+ar(a)+' و '+ar(b)+'، فما طول وتره؟',ar(c),[ar(a+b),ar(c+1),ar(c-1)],ar(a)+S+' + '+ar(b)+S+' = '+ar(a*a+b*b)+' ومنها الوتر = '+ar(c));
+ if(l==2)return mc('وتر مثلث قائم '+ar(c)+' وأحد ضلعي قائمته '+ar(a)+'، فما الضلع الآخر؟',ar(b),[ar(c-a),ar(b+1),ar(c+a)],ar(c)+S+' − '+ar(a)+S+' = '+ar(c*c-a*a)+' ومنها الضلع = '+ar(b));
+ return R(0,1)?mc('مستطيل بعداه '+ar(a)+' سم و '+ar(b)+' سم، فما طول قطره؟',ar(c)+' سم',[ar(a+b)+' سم',ar(c+2)+' سم',ar(c-2)+' سم'],'القطر وتر مثلث قائم: '+ar(a*a+b*b)+' ثم الجذر = '+ar(c)):mc('سلم طوله '+ar(c)+' م يستند إلى جدار وبُعد قدمه '+ar(a)+' م، فما ارتفاع طرفه العلوي؟',ar(b)+' م',[ar(c-a)+' م',ar(b+1)+' م',ar(c+a)+' م'],ar(c*c)+' − '+ar(a*a)+' = '+ar(b*b)+' ومنها '+ar(b))},
+function(l){var A,x,a,b;
+ if(l==1){A=[['ثلاثة أضلاع في أحدهما تساوي نظائرها في الآخر',0],['ضلعان وزاوية محصورة بينهما تساوي نظائرها',1],['زاويتان وضلع محصور بينهما تساوي نظائرها',2]];x=P(A);return mc('أي حالة تطابق تعني: '+x[0]+'؟',C[x[1]],oth(C[x[1]],C),'هذه حالة ('+C[x[1]]+')')}
+ if(l==2){A=[['ضلعان وزاوية غير محصورة بينهما',3,'الزاوية يجب أن تقع بين الضلعين'],['ثلاث زوايا',3,'تكفي للتشابه لا للتطابق'],['ضلع واحد وزاوية واحدة',3,'المعطيات لا تكفي'],['ضلعان وزاوية محصورة بينهما',1,'الزاوية محصورة بين الضلعين']];x=P(A);return mc('مثلثان فيهما '+x[0]+' متساوية، فالتطابق:',C[x[1]],oth(C[x[1]],C),x[2])}
+ a=R(30,80);b=R(30,70);return mc('مثلثان متطابقان، في الأول زاويتان '+ar(a)+'° و '+ar(b)+'°. ما الزاوية الثالثة في الثاني؟',ar(180-a-b)+'°',[ar(a+b)+'°',ar(360-a-b)+'°',ar(180-a)+'°'],'زوايا المثلثين متناظرة ومجموعها ١٨٠°: ١٨٠ − '+ar(a+b)+' = '+ar(180-a-b))},
+function(l){var k=R(2,6),p=P([1,2,3,4]),q=p+R(1,3),m=R(2,5),h,s,t;while(gcd(p,q)>1)q++;
+ if(l==1)return mc('مثلثان متشابهان، ضلعان متناظران فيهما '+ar(k*p)+' و '+ar(k*q)+'، فنسبة التشابه:',ar(p)+' : '+ar(q),[ar(q)+' : '+ar(p),ar(p)+' : '+ar(q+1),ar(p+1)+' : '+ar(q)],F(ar(k*p),ar(k*q))+' = '+F(ar(p),ar(q)));
+ if(l==2)return mc('نسبة التشابه بين مثلثين '+ar(p)+' : '+ar(q)+'، وضلع في الأول '+ar(p*m)+'. فالضلع المناظر في الثاني:',ar(q*m),[ar(p*m+q-p),ar(p*q),ar(q*m+1)],ar(p*m)+' × '+F(ar(q),ar(p))+' = '+ar(q*m));
+ h=P([2,3]);s=R(2,4);t=R(2,5);return mc('ظل شجرة '+ar(s*t)+' م، وفي اللحظة نفسها ظل عمود طوله '+ar(h)+' م يساوي '+ar(s)+' م. فما ارتفاع الشجرة؟',ar(h*t)+' م',[ar(h*t+1)+' م',ar(s*t)+' م',ar(h*s)+' م'],'المثلثان متشابهان: '+F(ar(h),ar(s))+' = '+F('س',ar(s*t))+' ومنها س = '+ar(h*t))},
+function(l){var T,n,a,f,g;
+ if(l==1){T=180;n=P([30,45,60,90]);return mc(ar(n)+' طالباً من '+ar(T)+'، فما زاوية قطاعهم في التمثيل بالقطاعات؟',ar(n*2)+'°',[ar(n)+'°',ar(n*3)+'°',ar(n*4)+'°'],F(ar(n),ar(T))+' × ٣٦٠ = '+ar(n*2))}
+ if(l==2){T=P([120,90,60,72]);n=R(5,12);f=360/T;a=n*f;return mc(ar(n)+' من '+ar(T)+'، فما زاوية قطاعها؟',ar(a)+'°',[ar(n)+'°',ar(a+30)+'°',ar(a-20)+'°'],F(ar(n),ar(T))+' × ٣٦٠ = '+ar(a))}
+ a=P([45,60,72,90,120]);T=P([720,1080]);n=a*T/360;return mc('قطاع زاويته '+ar(a)+'° في دائرة تمثل '+ar(T)+' شخصاً. كم شخصاً يمثّل؟',ar(n),[ar(a),ar(n+a),ar(Math.round(n/2))],F(ar(a),'٣٦٠')+' × '+ar(T)+' = '+ar(n))},
+function(l){var v=[],i,m,d1,d2,s,mx,mn;
+ if(l==1){for(i=0;i<5;i++)v.push(R(3,40));mx=Math.max.apply(0,v);mn=Math.min.apply(0,v);return mc('المدى للقيم '+v.map(function(x){return ar(x)}).join('، ')+' هو:',ar(mx-mn),[ar(mx),ar(mx+mn),ar(mx-mn+1)],ar(mx)+' − '+ar(mn)+' = '+ar(mx-mn))}
+ if(l==2){m=R(5,20);d1=R(1,6);d2=R(0,d1);v=sh([m-d1,m-d2,m,m+d2,m+d1]);return mc('الوسط الحسابي للقيم '+v.map(function(x){return ar(x)}).join('، ')+' هو:',ar(m),[ar(m+1),ar(m-1),ar(m+2)],F('المجموع '+ar(5*m),'٥')+' = '+ar(m))}
+ m=R(12,20);s=0;for(i=0;i<4;i++){v.push(R(m-3,m+3));s+=v[i]}return mc('الوسط الحسابي لخمس قيم '+ar(m)+'، والقيم الأربع الأولى: '+v.map(function(x){return ar(x)}).join('، ')+'. ما القيمة الخامسة؟',ar(5*m-s),[ar(5*m-s+1),ar(m),ar(5*m-s-2)],'المجموع الكلي '+ar(5*m)+' − '+ar(s)+' = '+ar(5*m-s))},
+function(l){var A,x,m,d,e,d1,d2,v;
+ if(l==1){A=[['هل يمكن أن يكون التباين عدداً سالباً؟','لا',['نعم'],'التباين مجموع مربعات مقسوم على عدد فلا يقل عن صفر'],['إذا تساوت كل القيم فالانحراف المعياري يساوي','٠',['١','الوسط'],'لا يوجد أي تشتت بين القيم'],['الانحراف المعياري هو الجذر التربيعي لـ','التباين',['الوسط','المدى'],'هذا هو تعريفه']];x=P(A);return mc(x[0],x[1],x[2],x[3])}
+ if(l==2){m=R(4,15);d=R(1,4);return mc('ما تباين القيمتين '+ar(m-d)+' و '+ar(m+d)+'؟',ar(d*d),[ar(d),ar(2*d),ar(2*d*d)],'الوسط '+ar(m)+' والانحرافان ±'+ar(d)+': '+F(ar(d*d)+' + '+ar(d*d),'٢')+' = '+ar(d*d))}
+ x=P([[1,3],[2,4],[1,5]]);m=R(8,15);d1=x[0];d2=x[1];e=(d1*d1+d2*d2)/2;v=[m-d2,m-d1,m+d1,m+d2];return mc('ما تباين القيم '+v.map(function(y){return ar(y)}).join('، ')+'؟',ar(e),[ar(d1*d1+d2*d2),ar(e+1),ar(2*e)],'الوسط '+ar(m)+' ومربعات الانحرافات '+ar(d2*d2)+'، '+ar(d1*d1)+'، '+ar(d1*d1)+'، '+ar(d2*d2)+' ومجموعها '+F(ar(d1*d1+d2*d2+d1*d1+d2*d2),'٤')+' = '+ar(e))}];
+
+function fr(n,d){var s=n<0?'−':'',g;if(n==0)return '٠';g=gcd(Math.abs(n),d);n=Math.abs(n)/g;d=d/g;return s+(d==1?ar(n):F(ar(n),ar(d)))}
+function pl(a,b,c){var s='';if(a)s+=(a<0?'−':'')+(Math.abs(a)==1?'':ar(Math.abs(a)))+'س'+S;
+ if(b)s+=(s?(b<0?' − ':' + '):(b<0?'−':''))+(Math.abs(b)==1?'':ar(Math.abs(b)))+'س';
+ if(c||!s)s+=(s?(c<0?' − ':' + '):(c<0?'−':''))+ar(Math.abs(c));return s}
+function cg(l,A){var x=P(A);return mc('أي حالة تطابق تعني: '+x[0]+'؟',C[x[1]],oth(C[x[1]],C),'هذه حالة ('+C[x[1]]+')')}
+var N={
+cmp:function(l){var d,a,b,c,e,fa,fb,r;
+ if(l==1){d=R(5,12);a=R(1,d-1);b=R(1,d-1);while(b==a)b=R(1,d-1);fa=F(ar(a),ar(d));fb=F(ar(b),ar(d));return mc('أي الكسرين أكبر؟',a>b?fa:fb,[a>b?fb:fa,'متساويان'],'المقامان متساويان فنقارن البسطين: '+ar(Math.max(a,b))+' > '+ar(Math.min(a,b)))}
+ do{b=R(2,9);e=R(2,9);a=R(1,b-1);c=R(1,e-1)}while(b==e||a*e==c*b);
+ if(l==2){fa=F(ar(a),ar(b));fb=F(ar(c),ar(e));r=a*e>c*b;return mc('أي الكسرين أكبر؟',r?fa:fb,[r?fb:fa,'متساويان'],ar(a)+' × '+ar(e)+' = '+ar(a*e)+' و '+ar(c)+' × '+ar(b)+' = '+ar(c*b))}
+ fa='−'+F(ar(a),ar(b));fb='−'+F(ar(c),ar(e));r=a*e<c*b;return mc('أي العددين أكبر؟',r?fa:fb,[r?fb:fa,'متساويان'],'في العددين السالبين يكون الأكبر هو الأقل قيمة مطلقة: '+F(ar(a),ar(b))+(r?' < ':' > ')+F(ar(c),ar(e)))},
+add:function(l){var d,e,a,b,k,n,op,m,cp=[3,4,5,7];
+ if(l==1){d=R(4,12);a=R(1,d-1);b=R(1,d-1);op=(R(0,1)&&a>b)?-1:1;n=a+op*b;return mc(F(ar(a),ar(d))+(op>0?' + ':' − ')+F(ar(b),ar(d))+' =',fr(n,d),[fr(a+b,2*d),fr(a*b,d),fr(n+1,d)],'المقامان متساويان فنجمع أو نطرح البسطين ثم نختصر')}
+ if(l==2){d=P([2,3,4,5,6]);k=R(2,3);e=d*k;a=R(1,d-1);b=R(1,e-1);op=(R(0,1)&&a*k>b)?-1:1;n=a*k+op*b;return mc(F(ar(a),ar(d))+(op>0?' + ':' − ')+F(ar(b),ar(e))+' =',fr(n,e),[fr(a+op*b,d+e),fr(a+op*b,e),fr(a+op*b,d)],'نوحّد المقامين إلى '+ar(e)+': '+F(ar(a*k),ar(e)))}
+ d=P(cp);e=P(cp);while(e==d)e=P(cp);a=R(1,d-1);b=R(1,e-1);op=R(0,1)?1:-1;n=a*e+op*b*d;m=d*e;return mc(F(ar(a),ar(d))+(op>0?' + ':' − ')+F(ar(b),ar(e))+' =',fr(n,m),[fr(a+op*b,d+e),fr(a*e-op*b*d,m),fr(a+op*b,m)],'المقام المشترك '+ar(m)+': ('+ar(a*e)+(op>0?' + ':' − ')+ar(b*d)+')/'+ar(m))},
+md:function(l){var a=R(1,8),b=R(2,9),c=R(1,8),d=R(2,9),s;while(a==b)a=R(1,8);while(c==d)c=R(1,8);
+ if(l==1)return mc(F(ar(a),ar(b))+' × '+F(ar(c),ar(d))+' =',fr(a*c,b*d),[fr(a+c,b+d),fr(a*d,b*c),fr(a*c,b+d)],'نضرب البسطين معاً والمقامين معاً: '+F(ar(a*c),ar(b*d)));
+ if(l==2)return mc(CF(F(ar(a),ar(b)),F(ar(c),ar(d)))+' =',fr(a*d,b*c),[fr(a*c,b*d),fr(b*c,a*d),fr(a*d,b*d)],'القسمة هي الضرب بمقلوب القاسم: '+F(ar(a),ar(b))+' × '+F(ar(d),ar(c)));
+ s=R(0,1);return mc((s?'−'+CF(F(ar(a),ar(b)),F(ar(c),ar(d))):'−'+F(ar(a),ar(b))+' × '+F(ar(c),ar(d)))+' =',s?fr(-a*d,b*c):fr(-a*c,b*d),[s?fr(a*d,b*c):fr(a*c,b*d),s?fr(-a*c,b*d):fr(-a*d,b*c),s?fr(-b*c,a*d):fr(-b*d,a*c)],'الإشارتان مختلفتان فالناتج سالب')},
+irr:function(l){var a=P([2,3,5,6,7]),k,m,p,n;
+ if(l==1){k=R(1,6);m=R(2,6);return mc(tm(cf(k),ar(a))+' + '+tm(cf(m),ar(a))+' =',tm(ar(k+m),ar(a)),[tm(ar(k+m),ar(2*a)),tm(ar(k*m),ar(a)),tm(ar(k+m),ar(a*a))],'الجذران متشابهان فنجمع المعاملين: '+ar(k)+' + '+ar(m)+' = '+ar(k+m))}
+ if(l==2){p=P([2,3,5]);m=R(2,4);return mc('ناتج '+rt(ar(p))+' × '+rt(ar(p*m*m))+' يساوي:',ar(p*m),[ar(p+m),ar(m),ar(p*m+1)],rt(ar(p))+' × '+rt(ar(p*m*m))+' = '+rt(ar(p*p*m*m))+' = '+ar(p*m))}
+ k=R(2,7);n=P([2,3,5,6]);return mc('بسّط: '+rt(ar(k*k*n)),tm(ar(k),ar(n)),[tm(ar(n),ar(k)),tm(ar(k+1),ar(n)),tm(ar(k),ar(n+1))],ar(k*k*n)+' = '+ar(k*k)+' × '+ar(n)+' وجذر '+ar(k*k)+' هو '+ar(k))},
+aadd:function(l){var a,b,c,d,e,f;
+ if(l==1){a=R(1,6);b=R(1,9);c=R(1,6);d=R(1,9);return mc('('+pl(0,a,b)+') + ('+pl(0,c,d)+') =',pl(0,a+c,b+d),[pl(0,a+c,b*d),pl(0,a*c,b+d),pl(0,a+c,b+d+1)],'نجمع الحدود المتشابهة: س مع س والثوابت مع الثوابت')}
+ if(l==2){a=R(3,9);c=R(1,a-1);b=R(1,9);d=R(1,9);return mc('('+pl(0,a,b)+') − ('+pl(0,c,d)+') =',pl(0,a-c,b-d),[pl(0,a-c,b+d),pl(0,a+c,b-d),pl(0,a-c,d-b)],'نغيّر إشارة كل حد في المقدار المطروح ثم نجمع')}
+ a=R(3,9);d=R(1,a-1);b=R(1,9);e=R(1,9);c=R(1,9);f=R(1,9);return mc('('+pl(a,b,c)+') − ('+pl(d,e,f)+') =',pl(a-d,b-e,c-f),[pl(a-d,b+e,c-f),pl(a+d,b-e,c-f),pl(a-d,b-e,c+f)],'نطرح كل حد من نظيره: '+ar(a)+' − '+ar(d)+' ، '+ar(b)+' − '+ar(e)+' ، '+ar(c)+' − '+ar(f))},
+mul:function(l){var a,b,c;
+ if(l==1){a=R(2,6);b=R(2,7);return mc(ar(a)+'س(س + '+ar(b)+') =',pl(a,a*b,0),[pl(a,b,0),pl(a,a+b,0),pl(a*a,a*b,0)],'نوزّع '+ar(a)+'س على كل حد')}
+ if(l==2){a=R(1,8);b=R(1,8);return mc('(س + '+ar(a)+')(س + '+ar(b)+') =',pl(1,a+b,a*b),[pl(1,a+b,a+b),pl(1,a*b,a+b),pl(1,a+b,a*b+1)],'س'+S+' + ('+ar(a)+' + '+ar(b)+')س + '+ar(a)+' × '+ar(b))}
+ if(R(0,1))return B[3](R(2,3));
+ a=R(2,5);b=R(1,6);c=R(1,5);return mc('('+pl(0,a,b)+')(س − '+ar(c)+') =',pl(a,b-a*c,-b*c),[pl(a,b+a*c,-b*c),pl(a,b-a*c,b*c),pl(a,a*c-b,-b*c)],'نضرب كل حد في كل حد ثم نجمع الحدود المتشابهة')},
+cfx:function(l){var k,p,q;
+ if(l==1)return B[4](1);
+ if(l==2){k=R(2,5);p=R(1,4);q=R(1,6);return mc('حلّل: '+pl(k*p,k*q,0),ar(k)+'س('+pl(0,p,q)+')',[ar(k)+'('+pl(p,q,0)+')','س('+pl(0,k*p,k*q)+')',ar(k)+'س('+pl(0,p,k*q)+')'],'العامل المشترك الأكبر هو '+ar(k)+'س')}
+ k=R(2,6);p=R(1,4);q=R(1,4);return mc('حلّل: '+ar(k*p)+'س'+S+'ص + '+ar(k*q)+'سص'+S,ar(k)+'سص('+cf(p)+'س + '+cf(q)+'ص)',[ar(k)+'س('+cf(p)+'سص + '+cf(q)+'ص'+S+')',ar(k)+'سص('+cf(q)+'س + '+cf(p)+'ص)',ar(k)+'ص('+cf(p)+'س'+S+' + '+cf(q)+'سص)'],'العامل المشترك الأكبر '+ar(k)+'سص')},
+quad:function(l){var a,s;
+ if(l==1)return B[4](2);if(l==2)return B[4](3);
+ a=R(2,9);s=R(0,1)?1:-1;return mc('حلّل: '+pl(1,s*2*a,a*a),'(س '+(s>0?'+':'−')+' '+ar(a)+')'+S,['(س + '+ar(a)+')(س − '+ar(a)+')','(س '+(s>0?'+':'−')+' '+ar(2*a)+')'+S,'(س '+(s>0?'−':'+')+' '+ar(a)+')'+S],ar(a*a)+' = '+ar(a)+S+' والحد الأوسط = ٢ × '+ar(a)+' فهو مربع كامل')},
+div:function(l){var a,k,m,p,q;
+ if(l==1){a=R(2,6);k=R(2,5);return mc('احسب: '+ar(a*k)+'س'+S3+' ÷ '+ar(a)+'س =',ar(k)+'س'+S,[ar(k)+'س'+S3,ar(k)+'س',ar(a)+'س'+S],'نقسم المعاملين ونطرح الأسس: '+ar(a*k)+' ÷ '+ar(a)+' = '+ar(k)+' و س'+S3+' ÷ س = س'+S)}
+ if(l==2){a=R(2,5);k=R(2,5);m=R(1,5);return mc('احسب: ('+pl(a*k,a*m,0)+') ÷ '+ar(a)+'س =',pl(0,k,m),[pl(0,k,a*m),pl(0,a*k,m),pl(k,0,m)],'نقسم كل حد على '+ar(a)+'س')}
+ p=R(1,6);q=R(1,6);while(q==p)q=R(1,6);return mc('احسب: ('+pl(1,p+q,p*q)+') ÷ (س + '+ar(p)+') =','س + '+ar(q),['س + '+ar(p),'س + '+ar(p+q),'س + '+ar(p*q)],'نحلّل البسط: (س + '+ar(p)+')(س + '+ar(q)+') ثم نختصر')},
+conv:function(l){var t=P(TR.slice(0,5)),a=t[0],b=t[1],c=t[2],y,z,s,r;
+ if(l==1){y=R(0,1);z=y?c+R(1,2):c;return mc('هل المثلث الذي أطوال أضلاعه '+ar(a)+'، '+ar(b)+'، '+ar(z)+' قائم الزاوية؟',y?'لا':'نعم',[y?'نعم':'لا'],ar(a)+S+' + '+ar(b)+S+' = '+ar(a*a+b*b)+(y?' ≠ ':' = ')+ar(z)+S+' = '+ar(z*z))}
+ if(l==2){s=function(u,v,w){return ar(u)+'، '+ar(v)+'، '+ar(w)};return mc('أي مجموعة أطوال تمثل أضلاع مثلث قائم؟',s(a,b,c),[s(a,b,c+1),s(a,b+1,c),s(a+1,b,c)],ar(a)+S+' + '+ar(b)+S+' = '+ar(a*a+b*b)+' = '+ar(c)+S)}
+ a=R(3,9);b=R(a,10);if(R(0,3)==0){t=P(TR.slice(0,5));a=t[0];b=t[1];c=t[2]}else c=R(b,Math.min(a+b-1,13));
+ s=a*a+b*b;r=c*c==s?'قائم الزاوية':c*c<s?'حاد الزوايا':'منفرج الزاوية';
+ return mc('مثلث أضلاعه '+ar(a)+'، '+ar(b)+'، '+ar(c)+'، فهو:',r,oth(r,['قائم الزاوية','حاد الزوايا','منفرج الزاوية']),ar(a)+S+' + '+ar(b)+S+' = '+ar(s)+' ونقارنه بـ '+ar(c)+S+' = '+ar(c*c))},
+g33:function(l){return l==1?cg(l,[['ثلاثة أضلاع في أحدهما تساوي نظائرها في الآخر',0],['ضلعان وزاوية محصورة بينهما تساوي نظائرها',1]]):B[7](l)},
+g34:function(l){return l==1?cg(l,[['زاويتان وضلع محصور بينهما تساوي نظائرها',2],['زاويتان وضلع محصور بينهما تساوي نظائرها',2],['ضلعان وزاوية محصورة بينهما تساوي نظائرها',1]]):B[7](l)},
+g42:function(l){var k,x=R(0,2);if(l==1)return R(0,1)?B[10](1):B[11](1);
+ if(l==2){if(x==0){k=R(2,8);return mc('تباين مجموعة قيم يساوي '+ar(k*k)+'، فانحرافها المعياري:',ar(k),[ar(k*k),ar(k+1),ar(2*k)],'الانحراف المعياري = '+rt(ar(k*k))+' = '+ar(k))}return x==1?B[10](2):B[11](2)}
+ return R(0,1)?B[10](3):B[11](3)}};
+function mix(a){return function(l){return P(a)(l)}}
+var U1=[B[0],B[1],N.cmp,N.add,N.md,B[2],N.irr],U2=[N.aadd,N.mul,N.cfx,N.quad,B[5],N.div],U3=[B[6],N.conv,N.g33,N.g34,B[8]],U4=[B[9],N.g42];
+
+var L=[
+{u:'الوحدة ١ · الأعداد النسبية وغير النسبية',n:'١-١',t:'العدد النسبي',p:'غيّر البسط والمقام وانظر هل تنتهي القسمة أم تتكرر الأرقام.',sl:[['البسط',1,11,1,1],['المقام',2,12,1,3]],d:d2,f:'الشكل ١: الكسر على شريط مقسوم',fm:'العدد النسبي = '+F('أ','ب')+' ، (أ، ب أعداد صحيحة ، ب ≠ ٠)',nt:'كل عدد صحيح وكل كسر عشري منتهٍ أو دوري عدد نسبي. وينتهي الكسر إذا لم يكن في مقامه بعد الاختصار إلا العاملان ٢ و٥.',ex:['اكتب ٠٫٧٥ على صورة كسر.','٠٫٧٥ = '+F('٧٥','١٠٠')+' = '+F('٣','٤')+''],g:U1[0]},
+{u:'الوحدة ١ · الأعداد النسبية وغير النسبية',n:'١-٢',t:'الجذر التربيعي والجذر التكعيبي',fm:rt('أ'+S)+' = أ ، '+rt3('أ'+S3)+' = أ',nt:'الجذر التربيعي لعدد نسبي موجب يكون نسبياً إذا كان بسطه ومقامه مربعين كاملين. احفظ مربعات الأعداد حتى ١٢ ومكعبات الأعداد حتى ٦.',ex:['احسب '+rt3(F('٢٧','٨'))+'.',rt3('٢٧')+' = ٣ و '+rt3('٨')+' = ٢ فالناتج '+F('٣','٢')+'.'],g:U1[1]},
+{u:'الوحدة ١ · الأعداد النسبية وغير النسبية',n:'١-٣',t:'مقارنة الأعداد النسبية',fm:F('أ','ب')+' > '+F('جـ','د')+' ⇔ أ × د > جـ × ب  (ب، د > ٠)',nt:'وحّد المقامين أو اضرب بالتبادل. وعند مقارنة عددين سالبين يكون الأكبر هو الأقل قيمة مطلقة.',ex:['قارن بين '+F('٣','٤')+' و '+F('٥','٧')+'.','٣ × ٧ = ٢١ و ٥ × ٤ = ٢٠ فـ '+F('٣','٤')+' > '+F('٥','٧')+'.'],g:U1[2]},
+{u:'الوحدة ١ · الأعداد النسبية وغير النسبية',n:'١-٤',t:'جمع الأعداد النسبية وطرحها',fm:F('أ','ب')+' ± '+F('جـ','د')+' = '+F('أ د ± جـ ب','ب د'),nt:'وحّد المقامات أولاً ثم اجمع البسطين أو اطرحهما، واختصر الناتج.',ex:['احسب '+F('١','٣')+' + '+F('١','٦')+'.',''+F('١','٣')+' = '+F('٢','٦')+' فالناتج '+F('٢','٦')+' + '+F('١','٦')+' = '+F('٣','٦')+' = '+F('١','٢')+'.'],g:U1[3]},
+{u:'الوحدة ١ · الأعداد النسبية وغير النسبية',n:'١-٥',t:'ضرب الأعداد النسبية وقسمتها',fm:F('أ','ب')+' × '+F('جـ','د')+' = '+F('أ جـ','ب د')+' ، '+CF(F('أ','ب'),F('جـ','د'))+' = '+F('أ','ب')+' × '+F('د','جـ'),nt:'القسمة هي الضرب بمقلوب القاسم، وناتج ضرب عددين إشارتاهما مختلفتان سالب.',ex:['احسب '+CF(F('٢','٣'),F('٤','٩'))+'.',''+F('٢','٣')+' × '+F('٩','٤')+' = '+F('١٨','١٢')+' = '+F('٣','٢')+'.'],g:U1[4]},
+{u:'الوحدة ١ · الأعداد النسبية وغير النسبية',n:'١-٦',t:'العدد غير النسبي',fm:'العدد غير النسبي لا يُكتب على الصورة '+F('أ','ب'),nt:'الكسر العشري غير المنتهي وغير الدوري عدد غير نسبي، ومنه جذر العدد الذي ليس مربعاً كاملاً.',ex:['بين أي عددين صحيحين متتاليين يقع '+rt('٢٠')+'؟','١٦ < ٢٠ < ٢٥ فالجذر بين ٤ و ٥.'],g:U1[5]},
+{u:'الوحدة ١ · الأعداد النسبية وغير النسبية',n:'١-٧',t:'العمليات على الأعداد غير النسبية',fm:rt('أ')+' × '+rt('ب')+' = '+rt('أ ب')+' ، '+tm('م','أ')+' + '+tm('ن','أ')+' = '+tm('(م + ن)','أ'),nt:'اجمع الجذور المتشابهة فقط، وبسّط الجذر بإخراج العامل الذي هو مربع كامل.',ex:['بسّط '+rt('٤٥')+' + '+rt('٢٠')+'.',rt('٤٥')+' = '+tm('٣','٥')+' و '+rt('٢٠')+' = '+tm('٢','٥')+' فالمجموع '+tm('٥','٥')+'.'],g:U1[6]},
+{u:'الوحدة ١ · الأعداد النسبية وغير النسبية',n:'١-٨',t:'تمارين عامة (الوحدة ١)',gen:1,g:mix(U1)},
+{u:'الوحدة ٢ · الجبر',n:'٢-١',t:'جمع المقادير الجبرية وطرحها',fm:'نجمع أو نطرح الحدود المتشابهة فقط',nt:'عند الطرح غيّر إشارة كل حد في المقدار المطروح.',ex:['احسب (٣س + ٥) − (س + ٢).','٣س + ٥ − س − ٢ = ٢س + ٣'],g:U2[0]},
+{u:'الوحدة ٢ · الجبر',n:'٢-٢',t:'ضرب المقادير الجبرية',p:'المربع الكبير طول ضلعه (س + أ). قسّمه إلى أربع قطع وسترى السبب بنفسك.',sl:[['أ',1,6,1,3]],d:d0,f:'الشكل ٢: مربع طول ضلعه (س + أ)',fm:'(س + أ)'+S+' = س'+S+' + ٢أس + أ'+S,nt:'المستطيلان متساويان ومساحة كل منهما أس، فمجموعهما ٢أس وهو الحد الأوسط.',ex:['فُكّ (س + ٥)'+S+'.','س'+S+' + ٢ × ٥س + ٢٥ = س'+S+' + ١٠س + ٢٥'],g:U2[1]},
+{u:'الوحدة ٢ · الجبر',n:'٢-٣',t:'تحليل المقادير الجبرية بإخراج العامل المشترك',fm:'أ ب + أ جـ = أ(ب + جـ)',nt:'ابحث عن أكبر عامل مشترك للمعاملات وعن أقل أس لكل متغير.',ex:['حلّل ١٢س'+S+' + ١٨س.','العامل المشترك ٦س فالناتج ٦س(٢س + ٣).'],g:U2[2]},
+{u:'الوحدة ٢ · الجبر',n:'٢-٤',t:'تحليل العبارة التربيعية',fm:'س'+S+' + (م + ن)س + م ن = (س + م)(س + ن)',nt:'ابحث عن عددين حاصل ضربهما الحد الثابت ومجموعهما معامل س.',ex:['حلّل س'+S+' + ٧س + ١٢.','العددان اللذان حاصل ضربهما ١٢ ومجموعهما ٧ هما ٣ و ٤، فالناتج (س + ٣)(س + ٤).'],g:U2[3]},
+{u:'الوحدة ٢ · الجبر',n:'٢-٥',t:'تحليل الفرق بين مربعين',fm:'س'+S+' − أ'+S+' = (س − أ)(س + أ)',nt:'يتحلل الفرق بين مربعين إلى (الجذر − الجذر)(الجذر + الجذر).',ex:['حلّل ٢٥س'+S+' − ٤٩.','٢٥س'+S+' = (٥س)'+S+' و ٤٩ = ٧'+S+' فالناتج (٥س − ٧)(٥س + ٧).'],g:U2[4]},
+{u:'الوحدة ٢ · الجبر',n:'٢-٦',t:'قسمة المقادير الجبرية',fm:'نقسم المعاملات ونطرح الأسس',nt:'اقسم كل حد على أحادي الحد، ولقسمة مقدار على ذي حدين حلّل أولاً ثم اختصر.',ex:['احسب (١٢س'+S3+' − ٨س'+S+') ÷ ٤س'+S+'.','١٢س'+S3+' ÷ ٤س'+S+' = ٣س و ٨س'+S+' ÷ ٤س'+S+' = ٢ فالناتج ٣س − ٢'],g:U2[5]},
+{u:'الوحدة ٢ · الجبر',n:'٢-٧',t:'تمارين عامة (الوحدة ٢)',gen:1,g:mix(U2)},
+{u:'الوحدة ٣ · الهندسة',n:'٣-١',t:'نظرية فيثاغورس',p:'السلم والجدار والأرض مثلث قائم الزاوية والسلم هو الوتر. حرّك السلم حتى تضيء النافذة على ارتفاع ٨ م.',sl:[['طول السلم',5,13,1,10],['بُعد القدم',0,13,.5,3]],d:d1,f:'الشكل ٣: سلم يستند إلى جدار',fm:'أ'+S+' + ب'+S+' = جـ'+S,nt:'في المثلث القائم مجموع مربعي ضلعي القائمة يساوي مربع الوتر.',ex:['مثلث قائم ضلعا قائمته ٦ و ٨، فما طول وتره؟','٣٦ + ٦٤ = ١٠٠ ومنها الوتر = ١٠.'],g:U3[0]},
+{u:'الوحدة ٣ · الهندسة',n:'٣-٢',t:'عكس نظرية فيثاغورس',fm:'إذا كان جـ'+S+' = أ'+S+' + ب'+S+' فالمثلث قائم',nt:'اجعل أطول ضلع هو الوتر المحتمل ثم قارن مربعه بمجموع مربعي الضلعين الآخرين.',ex:['هل المثلث الذي أضلاعه ٥، ١٢، ١٣ قائم؟','٢٥ + ١٤٤ = ١٦٩ = ١٣'+S+' فالمثلث قائم الزاوية.'],g:U3[1]},
+{u:'الوحدة ٣ · الهندسة',n:'٣-٣',t:'تطابق المثلثات (١)',fm:'ض ض ض · ض ز ض',nt:'في (ض، ز، ض) يجب أن تكون الزاوية محصورة بين الضلعين المتساويين.',ex:['فيهما: أب = سص و بجـ = صع و أجـ = سع. هل يتطابقان؟','نعم بحالة (ض، ض، ض) لتساوي الأضلاع الثلاثة المتناظرة.'],g:U3[2]},
+{u:'الوحدة ٣ · الهندسة',n:'٣-٤',t:'تطابق المثلثات (٢)',fm:'ز ض ز',nt:'في (ز، ض، ز) يجب أن يكون الضلع محصوراً بين الزاويتين المتساويتين.',ex:['∠أ = ∠س و أب = سص و ∠ب = ∠ص. هل يتطابق المثلثان؟','نعم بحالة (ز، ض، ز) لأن الضلع أب محصور بين الزاويتين.'],g:U3[3]},
+{u:'الوحدة ٣ · الهندسة',n:'٣-٥',t:'تشابه المثلثات',fm:'نسبة التشابه = '+F('طول الضلع','طول مناظره'),nt:'في المثلثين المتشابهين تتساوى الزوايا المتناظرة وتتناسب الأضلاع المتناظرة.',ex:['أضلاع مثلث ٣، ٤، ٥ ومثله متشابه أقصر ضلع فيه ٦. ما أطول ضلع فيه؟','نسبة التشابه ٢ : ١ فأطول ضلع = ٥ × ٢ = ١٠.'],g:U3[4]},
+{u:'الوحدة ٣ · الهندسة',n:'٣-٦',t:'تمارين عامة (الوحدة ٣)',gen:1,g:mix(U3)},
+{u:'الوحدة ٤ · الإحصاء',n:'٤-١',t:'تمثيل البيانات بالقطاعات الدائرية',p:'اضرب نسبة كل فئة في ٣٦٠° لتعرف زاوية قطاعها. عدّل الأعداد وراقب الزوايا.',sl:[['التفاح',10,100,10,60],['البلح',10,100,10,60],['الموز',10,100,10,50]],d:d3,f:'الشكل ٤: الفواكه في المزرعة',fm:'زاوية القطاع = '+F('العدد','المجموع')+' × ٣٦٠°',nt:'مجموع زوايا كل القطاعات يساوي ٣٦٠° دائماً.',ex:['٣٠ من ١٢٠، فما زاوية قطاعها؟',F('٣٠','١٢٠')+' × ٣٦٠ = ٩٠°.'],g:U4[0]},
+{u:'الوحدة ٤ · الإحصاء',n:'٤-٢',t:'مقاييس التشتت',fm:'التباين = '+F('مجموع (س − الوسط)'+S,'ن')+' ، الانحراف المعياري = '+rt('التباين'),nt:'المدى يعتمد على قيمتين فقط، أما التباين فيأخذ كل القيم في الحساب.',ex:['القيم ٠، ١، ٢، ٣، ٤: ما التباين والانحراف المعياري؟','الوسط ٢ ومربعات الانحرافات ٤، ١، ٠، ١، ٤ مجموعها '+F('١٠','٥')+' = ٢. فالتباين ٢ والانحراف المعياري '+rt('٢')+'.'],g:U4[1]},
+{u:'الوحدة ٤ · الإحصاء',n:'٤-٣',t:'تمارين عامة (الوحدة ٤)',gen:1,g:mix(U4)}];
+
+var DSH=0,RVP=0,DTP=0,rv=[],eb=[0,0,0,0],ed=[0,0,0,0],dt={pts:0,solved:0,streak:0,best:0,lv:1,ls:0},QZ={},LI=[],BI=[],bb=[],bank={},WKP=0,FRP=0,BN=[12,12,10,14,14,12,13,15,11,14,12,15,13,12,15,15,11,10,10,13,15,12,15,15],pgs=[],cur=0,lv=[],mp=[],sk=[],cq=[],bk=$('bk');
+function mk(h){var e=document.createElement('div');e.className='pg';e._h=h;e._j=pgs.length;e.innerHTML='<div class="sc"></div><div class="pn"></div>';bk.appendChild(e);pgs.push(e);return e}
+function ensure(p){if(!p||p._h==null)return;var j=p._j,i=LI[j],b=BI[j];p.firstChild.innerHTML=p._h;p._h=null;
+ [].forEach.call(p.firstChild.children,function(c,k){c.style.animationDelay=(.25+k*.06)+'s'});
+ if(i!=null){upd(i);nq(i);[].forEach.call(p.querySelectorAll('.fm,.nt,.ex,.ans'),mw)}
+ if(b!=null)bnkHome(b)}
+mk('<small>الجزء الأول</small><h1>الرياضيات</h1><div class="orn">π</div><h3>الصف الثامن الأساسي</h3><small style="margin-top:22px">اضغط «التالي» أو اسحب الصفحة لتفتح الكتاب</small><small class="cp">© ٢٠٢٦ · جميع حقوق هذه النسخة التفاعلية محفوظة للمعلمة نهى فائق</small>').classList.add('cvr');DSH=pgs.length;mk('<div class="hd"><span>لوحتي</span><span>اليوم</span></div><h2>لوحتي</h2><div id="dsh"></div>');
+L.forEach(function(l,i){lv[i]=1;mp[i]=0;sk[i]=0;
+ var sim='',h2='';
+ if(l.d){sim='<div class="fig"><svg id="f'+i+'"></svg><div class="cap">'+l.f+'</div></div>'+l.sl.map(function(s,j){return '<label class="sl"><span>'+s[0]+'</span><input type="range" data-l="'+i+'" id="s'+i+'_'+j+'" min="'+s[1]+'" max="'+s[2]+'" step="'+s[3]+'" value="'+s[4]+'"><b id="v'+i+'_'+j+'"></b></label>'}).join('')+'<div class="out" id="o'+i+'"></div>'}
+ var body=l.gen?'<p>مراجعة شاملة لدروس الوحدة. يتكيّف مستوى الأسئلة مع إجاباتك.</p>':(l.p?'<p>'+l.p+'</p>':'')+sim+'<div class="fm">'+l.fm+'</div><div class="nt"><b>ملاحظة:</b> '+l.nt+'</div><div class="ex"><b>مثال:</b> '+l.ex[0]+'</div><div class="fb"><div class="ans">'+l.ex[1]+'</div><div class="flap">ارفع الورقة لترى الحل</div></div>';
+ LI[pgs.length]=i;mk('<div class="hd"><span>'+l.u+'</span><span>'+(l.gen?'':'الدرس ')+l.n+'</span></div><h2>'+l.t+'</h2>'+body+'<div class="qh">✎ تدرّب <button class="spk" data-s="'+i+'">🔊</button><button class="mic" data-m="'+i+'">🎤</button><span class="lvl" id="lb'+i+'"></span><span class="mpips" id="mp'+i+'"></span></div><div class="qt" id="pq'+i+'"></div><div id="po'+i+'"></div><div class="fbk" id="pf'+i+'"></div><button class="more" data-n="'+i+'">سؤال جديد</button><button class="altb" data-a="'+i+'">💡 اشرحها بطريقة أخرى</button><div class="alt" id="al'+i+'"></div>');BI[pgs.length]=i;mk('<div class="hd"><span>'+l.u+'</span><span>بنك أسئلة '+(l.gen?l.n:'الدرس '+l.n)+'</span></div><h2>بنك أسئلة: '+l.t+'</h2><p>أسئلة بمستويات مختلفة، سهلة وصعبة معاً. هذا اختبار بلا تلميحات.</p><div id="bs'+i+'"></div>')});
+WKP=pgs.length;mk('<div class="hd"><span>ورشة الأسئلة</span><span>ابتكر</span></div><h2>اصنع سؤالاً لصديقك</h2><p>اكتب سؤالاً بأربعة خيارات وأرسل الرابط ليجرّبه صديقك.</p><textarea id="wq" rows="2" maxlength="90" placeholder="نص السؤال"></textarea>'+[0,1,2,3].map(function(k){return '<label class="wo"><input type="radio" name="wr" value="'+k+'"'+(k?'':' checked')+'><input type="text" class="wi" maxlength="24" placeholder="الخيار '+['الأول','الثاني','الثالث','الرابع'][k]+'"></label>'}).join('')+'<input type="text" id="we" maxlength="70" placeholder="شرح الإجابة (اختياري)"><div class="tb"><button data-ins="^٢">س²</button><button data-ins="^٣">س³</button><button data-ins="√">√</button><button data-ins="/">كسر /</button></div><div class="hint">الكسر: ٣/٤ · الأس: س^٢ · الجذر: √٤٩ · الدائرة تحدد الإجابة الصحيحة.</div><button class="more" id="wmk">أنشئ الرابط</button><div id="wl"></div>');
+FRP=pgs.length;mk('<div class="hd"><span>سؤال من صديق</span><span id="fn2"></span></div><h2>تحدٍّ من صديقك</h2><div id="fq" class="qt">لم يصلك سؤال بعد. افتح رابطاً أرسله صديقك، أو اصنع سؤالاً بنفسك.</div><div id="fo"></div><div id="ff" class="fbk"></div><button class="more" id="fgo">اصنع سؤالاً أنت أيضاً</button>');
+RVP=pgs.length;mk('<div class="hd"><span>مراجعة ذكية</span><span>أدواتي</span></div><h2>المراجعة الذكية</h2><p>أسئلة أخطأت فيها سابقاً تعود إليك في الموعد المناسب بأرقام جديدة.</p><div id="rvb"></div>');DTP=pgs.length;mk('<div class="hd"><span>المحقق</span><span>أدواتي</span></div><h2>مكتب المحقق</h2><div id="dtb"></div>');mk('<h2>أحسنت!</h2><p>أتقنت <b id="fs">٠</b> من '+ar(L.length)+' درساً.</p><p id="es"></p><p>عُد إلى أي درس وتدرّب أكثر ليرتفع مستواك.</p><button id="rs">ابدأ من جديد</button><small class="cp dk">© ٢٠٢٦ · جميع حقوق هذه النسخة التفاعلية محفوظة للمعلمة نهى فائق</small>').classList.add('e');
+pgs.forEach(function(p,i){p.style.zIndex=pgs.length-i;if(i)p.querySelector('.pn').textContent=ar(i);});
+function upd(i){var l=L[i];if(!l.d||!$('f'+i))return;var v=l.sl.map(function(s,j){var e=$('s'+i+'_'+j);$('v'+i+'_'+j).textContent=ar(+e.value);return +e.value}),r=l.d(v),sv=$('f'+i);sv.setAttribute('viewBox',r[1]);sv.innerHTML=r[0];$('o'+i).innerHTML=r[2];mw($('o'+i));fit1($('o'+i))}
+function pips(i){var s='',k;if(!$('mp'+i))return;for(k=0;k<10;k++)s+=k<mp[i]?'●':'○';$('mp'+i).textContent=mp[i]>=10?'✔ أتقنت الدرس':s}
+function nq(i){var l=lv[i],x;if(!$('pq'+i))return;if(R(1,100)<28)l=Math.max(1,Math.min(3,l+(R(0,1)?1:-1)));x=L[i].g(l);cq[i]={x:x,l:l,d:0,h:0};
+ $('pq'+i).innerHTML=x.q;$('po'+i).innerHTML=x.o.map(function(t,j){return '<div class="op" data-p="'+i+'" data-i="'+j+'"><span class="bx"></span><span class="l">'+t+'</span></div>'}).join('');
+ mw($('pq'+i));[].forEach.call(document.querySelectorAll('#po'+i+' .l'),mw);$('pf'+i).innerHTML='';$('lb'+i).textContent=['','سهل','متوسط','متقدم'][l];$('lb'+i).className='lvl l'+l;$('al'+i).className='alt';pips(i)}
+function stat(){var m=mp.filter(function(x){return x>=10}).length;$('pi').textContent=ar(cur+1)+' من '+ar(pgs.length)+' · ⭐'+ar(m);$('pv').disabled=cur==0;$('nx').disabled=cur==pgs.length-1;var fs=$('fs');if(fs)fs.textContent=ar(m);if(window.evoTxt)evoTxt()}
+function go(n){cur=Math.max(0,Math.min(pgs.length-1,n));pgs.forEach(function(p,j){var d=Math.abs(j-cur);if(d<=1)ensure(p);p.style.display=d<=2?'':'none';p.classList.toggle('fl',j<cur);p.classList.toggle('cur',j==cur)});[].forEach.call(pgs[cur].querySelectorAll('.fm,.out'),fit1);pgs[cur].firstChild.scrollTop=0;stat();if(window.gOpen)gOpen();if(window.pgShow)pgShow(cur)}
+function setH(){document.documentElement.style.setProperty('--H',(window.visualViewport?visualViewport.height:innerHeight)+'px')}
+setH();addEventListener('resize',setH);if(window.visualViewport)visualViewport.addEventListener('resize',setH);
+loadP();var fit0=function(){[].forEach.call(pgs[cur].querySelectorAll('.fm,.out'),fit1)};addEventListener('resize',fit0);if(document.fonts)document.fonts.ready.then(fit0);
+$('nx').onclick=function(){go(cur+1)};$('pv').onclick=function(){go(cur-1)};
+function resetAll(){L.forEach(function(l,i){lv[i]=1;mp[i]=0;sk[i]=0;bb[i]=0;bank[i]=null;bnkHome(i);nq(i)});rv=[];eb=[0,0,0,0];ed=[0,0,0,0];dt={pts:0,solved:0,streak:0,best:0,lv:1,ls:0};save();evo(0);document.querySelectorAll('.flap').forEach(function(f){f.classList.remove('up')});go(0)}
+document.addEventListener('input',function(e){if(e.target.dataset.l!=null)upd(+e.target.dataset.l)});
+document.addEventListener('click',function(e){
+ var f=e.target.closest('.flap');if(f){f.classList.add('up');if(window.gSay)gSay('ex','happy');return}
+ var b=e.target.closest('.more');if(b){if(b.dataset.n!=null)nq(+b.dataset.n);return}
+ var o=e.target.closest('.op');if(!o||o.dataset.p==null)return;var i=+o.dataset.p,c=cq[i];if(c.d)return;c.d=1;
+ var ok=+o.dataset.i==c.x.r,msg=ok?'✔ أحسنت! ':'✘ ليست صحيحة. ',w=lv[i];
+ o.classList.add(ok?'ok':'no');if(!ok)document.querySelectorAll('#po'+i+' .op')[c.x.r].classList.add('ok');
+ if(ok){if(c.h){mp[i]=Math.min(10,mp[i]+1)}else{sk[i]++;mp[i]=Math.min(10,mp[i]+c.l);if(sk[i]>=2&&lv[i]<3){lv[i]++;sk[i]=0}}}else{sk[i]=0;mp[i]=Math.max(0,mp[i]-1);if(lv[i]>1)lv[i]--;rvAdd(i,c.l)}
+ if(lv[i]>w)msg+='⬆ ارتفع مستواك. ';if(lv[i]<w)msg+='⬇ سنراجع بسؤال أسهل. ';
+ $('pf'+i).innerHTML=msg+c.x.a;mw($('pf'+i));pips(i);stat();gAns(i,ok,w);evo(1);save();$('pf'+i).scrollIntoView({block:'nearest',behavior:'smooth'})});
+var x0=null,y0=0;document.addEventListener('touchstart',function(e){x0=e.target.closest('input,textarea,#sh')?null:e.touches[0].clientX;y0=e.touches[0].clientY},{passive:true});
+document.addEventListener('touchend',function(e){if(x0==null)return;var dx=e.changedTouches[0].clientX-x0,dy=e.changedTouches[0].clientY-y0;if(Math.abs(dx)>60&&Math.abs(dx)>Math.abs(dy)*1.5){if(dx>0)go(cur+1);else go(cur-1)}x0=null},{passive:true});
+document.addEventListener('keydown',function(e){if(/INPUT|TEXTAREA/.test(e.target.tagName)&&e.target.type!='range')return;if(e.key=='ArrowLeft')go(cur+1);if(e.key=='ArrowRight')go(cur-1);if((e.ctrlKey||e.metaKey)&&'+-=0'.indexOf(e.key)>-1)e.preventDefault()});
+['gesturestart','gesturechange','gestureend'].forEach(function(t){document.addEventListener(t,function(e){e.preventDefault()})});
+document.addEventListener('touchmove',function(e){if(e.touches.length>1)e.preventDefault()},{passive:false});
+document.addEventListener('wheel',function(e){if(e.ctrlKey)e.preventDefault()},{passive:false});
+var gName='',gT=0,gM=0,gI=0;
+try{gName=localStorage.getItem('qn')||''}catch(e){}
+var PH={
+ ex:['اقرأ الحل ثم جرّب بنفسك{n}.','هكذا يُحل! دورك الآن{n}.'],
+ ok:['أحسنت{n}!','ممتاز{n}!','رائع، صحيحة!','صحيح، تقدّم جميل{n}!'],
+ no:['لا بأس{n}، اقرأ الشرح.','قريب! جرّب سؤالاً جديداً.','الخطأ يعلّمنا{n}.'],
+ up:['ارتفع مستواك{n}! ⬆','أداء رائع، مستوى أعلى!'],
+ down:['سنثبّت الأساس بسؤال أسهل.','نعود خطوة ثم نتقدم.'],
+ mast:['أتقنت الدرس{n}! ⭐','رائع! درس متقن ⭐'],
+ idle:['تحتاج مساعدة؟ اضغط عليّ.','أنا هنا إن احتجتني.']};
+var GF={
+ happy:'<path d="M24 54Q30 61 36 54" fill="none" stroke="#2f2619" stroke-width="2" stroke-linecap="round"/>',
+ cheer:'<path d="M23 53Q30 68 37 53Z" fill="#8a1f33" stroke="#2f2619" stroke-width="1.5"/><path d="M26 60Q30 64 34 60" fill="#f08a9b"/><path d="M13 56Q4 46 8 36M47 56Q56 46 52 36" stroke="#2f2619" fill="none" stroke-width="2" stroke-linecap="round"/><text x="1" y="26" font-size="12" fill="#e0a82e">✦</text><text x="47" y="22" font-size="12" fill="#e0a82e">✦</text>',
+ sad:'<path d="M25 60Q30 54 35 60" fill="none" stroke="#2f2619" stroke-width="2" stroke-linecap="round"/><path d="M19 37L27 40M41 37L33 40" stroke="#2f2619" stroke-width="2" stroke-linecap="round"/><path d="M47 38Q50 44 47 47Q44 44 47 38Z" fill="#7fc8ff"/>',
+ think:'<path d="M26 57H34" stroke="#2f2619" stroke-width="2" stroke-linecap="round"/><path d="M33 36L41 34" stroke="#2f2619" stroke-width="2" stroke-linecap="round"/><text x="45" y="18" font-size="14" fill="#5a35a8">؟</text>'};
+var gd=document.createElement('div');gd.id='gd';
+gd.innerHTML='<svg viewBox="0 0 60 110" aria-hidden="true"><g transform="rotate(-6 30 55)"><g id="gcape"></g><rect x="14" y="4" width="32" height="13" rx="5" fill="#f4a6b8" stroke="#2f2619" stroke-width="1.5"/><rect x="14" y="17" width="32" height="8" fill="#c9cfd6" stroke="#2f2619" stroke-width="1.5"/><path d="M14 20H46M14 22H46" stroke="#9aa3ad"/><rect id="gbody" x="14" y="25" width="32" height="50" fill="#ffd23f" stroke="#2f2619" stroke-width="1.5"/><path d="M22 25V75M38 25V75" stroke="#f0b800" stroke-width="2"/><polygon points="14,75 46,75 30,98" fill="#f1d3a1" stroke="#2f2619" stroke-width="1.5" stroke-linejoin="round"/><polygon points="25,90 35,90 30,98" fill="#3d3d3d"/><ellipse class="eye" cx="24" cy="45" rx="3.2" ry="4.2" fill="#2f2619"/><ellipse class="eye" cx="36" cy="45" rx="3.2" ry="4.2" fill="#2f2619"/><circle cx="25" cy="43.5" r="1.1" fill="#fff"/><circle cx="37" cy="43.5" r="1.1" fill="#fff"/><circle cx="19" cy="52" r="3" fill="#ff8fa3" opacity=".55"/><circle cx="41" cy="52" r="3" fill="#ff8fa3" opacity=".55"/><g id="gf"></g><g id="gacc"></g></g></svg>';
+var gb=document.createElement('div');gb.id='gb';
+var cv=document.querySelector('.cov');cv.appendChild(gd);cv.appendChild(gb);
+function setMood(m){$('gf').innerHTML=GF[m];gd.className=(m=='cheer'||m=='sad')?m:'';clearTimeout(gM);if(m!='happy')gM=setTimeout(function(){setMood('happy')},2600)}
+function nm(){return gName?' يا '+gName:''}
+function gSay2(h,m,keep){gb.innerHTML=h;gb.className=(keep?'big ':'')+'on';setMood(m||'happy');clearTimeout(gT);if(!keep)gT=setTimeout(function(){gb.classList.remove('on')},4500)}
+function gSay(k,m){gSay2(P(PH[k]).replace('{n}',nm()),m)}
+function gIdle(){clearTimeout(gI);gI=setTimeout(function(){var i=LI[cur];if(i!=null&&cq[i]&&!cq[i].d)gSay('idle','think')},30000)}
+function gAsk(){gSay2('أنا <b>قُلَيم</b>! ما اسمك؟ <input id="gn" maxlength="14" placeholder="اسمك"><button id="gok">تم</button>','cheer',1)}
+function gOpen(){var i=LI[cur],b=BI[cur];
+ if(cur==0){gName?gSay2('أهلاً بعودتك'+nm()+'!','happy'):gAsk();return}
+ if(cur==DSH){gSay2('هذه لوحتك'+nm()+': اقتراحات اليوم أمامك.','happy');return}
+ if(cur==RVP){gSay2('أسئلتك التي تحتاج تثبيتاً.','think');return}
+ if(cur==DTP){gSay2('كن محققاً: اكتشف الخطأ المخفي!','think');return}
+ if(cur==WKP){gSay2('ابتكر سؤالاً لصديقك'+nm()+'!','happy');return}
+ if(cur==FRP){gSay2('تحدٍّ من صديق، فكّر جيداً!','think');return}
+ if(cur==pgs.length-1){gSay2('انتهى الجزء الأول'+nm()+'!','cheer');return}
+ if(b!=null){gSay2((L[b].gen?'':'بنك الدرس '+L[b].n+': ')+P(['هل أنت جاهز؟','اختبر نفسك'+nm()+'.','أسئلة مختلطة، حظاً موفقاً!']),'think');return}
+ gSay2((L[i].gen?'':'الدرس '+L[i].n+': ')+P(['هيا نبدأ!','ركّز معي'+nm()+'.','معاً نتعلم.']),'happy');gIdle()}
+function gAns(i,ok,w){var up=lv[i]>w,dn=lv[i]<w;
+ if(ok&&mp[i]>=10){gSay('mast','cheer')}else if(up){gSay('up','cheer')}else if(ok){gSay('ok','cheer')}else{gSay(dn?'down':'no','sad')}gIdle()}
+function gSave(){var v=($('gn').value||'').trim();if(!v)return;gName=v;try{localStorage.setItem('qn',v)}catch(e){}gSay2('أهلاً'+nm()+'! اضغط «التالي».','cheer')}
+document.addEventListener('click',function(e){
+ if(e.target.id=='gok'){gSave();return}
+ gIdle();
+ if(!e.target.closest('#gd'))return;
+ if(BI[cur]!=null){gSay2('هذا اختبار، بلا تلميحات! ركّز.','think');return}
+ var i=LI[cur],c,ops,wr;
+ if(i==null){gSay2('اضغط «التالي» لنتابع.','happy');return}
+ c=cq[i];if(!c)return;
+ if(c.d){gSay2('اضغط «سؤال جديد».','think');return}
+ ops=[].slice.call(document.querySelectorAll('#po'+i+' .op:not(.gone)'));wr=ops.filter(function(o){return +o.dataset.i!=c.x.r});
+ if(c.h==0&&wr.length>1){c.h=1;P(wr).classList.add('gone');gSay2('أزلت لك خياراً خاطئاً.','happy')}
+ else{c.h=1;gSay2(L[i].fm?'راجع القاعدة والمثال أعلى الصفحة ⬆':'فكّر جيداً، أنت قادر!','think')}});
+document.addEventListener('keydown',function(e){if(e.target.id=='gn'&&e.key=='Enter')gSave()});
+setMood('happy');
+/* ===== v6: explain-another-way, voice, friend questions, evolving pencil ===== */
+var ART='https://claude.ai/artifact/LUTjh5kqYuGffwD4EKzn7f',FQ=null,FQd=0,lastF=null,spkOn=0;
+var SB=[
+['تقسم أم أحمد ثلاثة أرغفة بين ثمانية أولاد، فيأخذ كل ولد ثلاثة أثمان. كل نصيب يُكتب كسراً هو عدد نسبي.',['اقسم البسط على المقام.','إن انتهت القسمة فالكسر منتهٍ.','وإن تكرّر الباقي فالكسر دوري.']],
+['حديقة مربعة مساحتها ٣٦ متراً مربعاً: ما طول ضلعها؟ نبحث عن عدد إذا ضربناه في نفسه أعطى ٣٦. إنه ٦، وهو الجذر التربيعي.',['حلّل العدد تحت الجذر إلى عوامله.','أخرج كل عاملين متشابهين من الجذر التربيعي (وكل ثلاثة من التكعيبي).','اضرب ما خرج.']],
+['أيهما أكبر: ثلاثة أرباع رغيف أم خمسة أسباع رغيف؟ نقسم الرغيفين إلى قطع متساوية الحجم ثم نعدّ القطع.',['اضرب بالتبادل: البسط الأول × المقام الثاني.','ثم البسط الثاني × المقام الأول.','الناتج الأكبر يدل على الكسر الأكبر (وفي السالبين العكس).']],
+['شربت نصف زجاجة ثم ربعاً. لا نجمع النصف والربع قبل أن نقسم الزجاجة إلى أرباع متساوية.',['وحّد المقامات.','اجمع البسطين أو اطرحهما.','اختصر الناتج.']],
+['نصف كيس زيتون وُزّع بالتساوي على ثلاثة بيوت: نصيب كل بيت ثلث النصف، أي سدس الكيس.',['في الضرب: بسط × بسط ومقام × مقام.','في القسمة اقلب القاسم ثم اضرب.','اختصر وحدّد الإشارة.']],
+['قطر مربع طول ضلعه متر واحد هو جذر ٢، أي ١٫٤١٤… أرقام لا تنتهي ولا تتكرر، لذلك هو عدد غير نسبي.',['هل العدد تحت الجذر مربع كامل؟','إن كان كذلك فالجذر نسبي.','وإلا فهو غير نسبي، وقدّره بين عددين صحيحين متتاليين.']],
+['كيسان من «جذر ٢» وثلاثة أكياس منه: المجموع خمسة أكياس. أما «جذر ٢» مع «جذر ٣» فنوعان مختلفان لا يجتمعان.',['اجمع أو اطرح الجذور المتشابهة فقط.','عند الضرب اضرب ما تحت الجذرين.','بسّط بإخراج المربعات الكاملة.']],
+null,
+['في السوق: ٣ كيلو برتقال و٥ دنانير، ومعها ٢ كيلو برتقال و٢ دينار. نجمع البرتقال مع البرتقال والدنانير مع الدنانير.',['رتّب الحدود المتشابهة.','عند الطرح غيّر إشارة كل حد في المقدار المطروح.','اجمع المعاملات.']],
+['أرض مستطيلة طولها (س + ٥) وعرضها (س + ٢): نقسمها إلى أربع قطع ونجمع مساحاتها.',['اضرب كل حد في الأول بكل حد في الثاني.','اجمع الحدود المتشابهة.','رتّب الناتج.']],
+['عندك ١٢ تفاحة و١٨ برتقالة وتريد صناديق متساوية: أكبر عدد ممكن ٦ صناديق، وهذا هو العامل المشترك الأكبر.',['اختر أكبر عامل مشترك للمعاملات.','وأقل أس لكل متغير مشترك.','اقسم كل حد عليه واكتبه خارج القوس.']],
+['مستطيل مساحته س'+S+' + ٧س + ١٢: نبحث عن بعديه، أي عددين حاصل ضربهما ١٢ ومجموعهما ٧.',['اكتب العددين اللذين حاصل ضربهما الحد الثابت.','تحقق أن مجموعهما معامل س.','اكتب (س + م)(س + ن).']],
+['قصّوا مربعاً صغيراً من زاوية مربع كبير: المساحة الباقية = كبير − صغير = (الضلع الكبير − الصغير)(الكبير + الصغير).',['تأكد أن الحدين مربعان كاملان بينهما ناقص.','خذ جذر كل حد.','اكتب (الأول − الثاني)(الأول + الثاني).']],
+['وزّعنا ١٢س حبة على ٤ طلاب بالتساوي: يأخذ كل طالب ٣س. وفي القسمة على مقدار ذي حدين نحلّل أولاً ثم نختصر.',['اقسم المعاملات.','اطرح الأسس للمتغير نفسه.','لذي الحدين: حلّل ثم اختصر.']],
+null,
+['سلم طوله ١٠ أمتار يستند إلى جدار وقدمه تبعد ٦ أمتار: السلم والجدار والأرض مثلث قائم الزاوية.',['حدّد الوتر: الضلع المقابل للزاوية القائمة.','اكتب أ'+S+' + ب'+S+' = جـ'+S+'.','عوّض ثم خذ الجذر.']],
+['نجار يتأكد أن زاوية خزانة قائمة: يقيس ٣ و٤ و٥، فإن تحقق فيثاغورس فالزاوية قائمة.',['ضع أطول ضلع جانباً كوتر محتمل.','احسب مجموع مربعي الضلعين الآخرين.','قارنه بمربع الأطول: إن تساويا فالمثلث قائم.']],
+['قصّ خياط قطعتين من القماش لهما الأطوال الثلاثة نفسها: لا بد أن تتطابقا تماماً.',['قارن الأضلاع المتناظرة.','هل لدينا ثلاثة أضلاع أو ضلعان وزاوية محصورة؟','اذكر الحالة (ض، ض، ض) أو (ض، ز، ض).']],
+['لوحتان لهما الزاويتان نفسهما والضلع نفسه بينهما: ترسم كل واحدة بطريقة وحيدة فتتطابقان.',['حدّد الزاويتين المتساويتين.','تأكد أن الضلع محصور بينهما.','اذكر الحالة (ز، ض، ز).']],
+['ظل شجرة وظل عمود في اللحظة نفسها: المثلثان لهما الزوايا نفسها فنسبة أطوالهما ثابتة.',['اكتب نسب الأضلاع المتناظرة.','تأكد أنها متساوية.','استخدم التناسب لإيجاد المجهول.']],
+null,
+['مزرعة فيها ٢٤٠ شجرة منها ٦٠ زيتون. الدائرة كلها ٣٦٠°، فنصيب الزيتون ربعها، أي ٩٠°.',['اجمع كل القيم.','نسبة الفئة = '+F('العدد','المجموع'),'اضربها في ٣٦٠°.']],
+['فريقان متوسطهما واحد، لكن لاعبي الأول متقاربو المستوى ولاعبي الثاني متفاوتون. التباين يقيس هذا التفاوت.',['احسب الوسط.','ربّع انحراف كل قيمة عن الوسط.','اجمع المربعات واقسمها على العدد فهذا التباين، وجذره الانحراف المعياري.']],
+null];
+var UR={7:[0,6],14:[8,13],20:[15,19],23:[21,22]},alt={};
+function altTab(i,t){var a=alt[i],x,h;[].forEach.call(document.querySelectorAll('#al'+i+' .tabs b'),function(b,k){b.classList.toggle('on',k==t)});
+ if(t==0)h=SB[a.k][0];
+ else if(t==1)h='<ol>'+SB[a.k][1].map(function(s){return '<li>'+s+'</li>'}).join('')+'</ol>';
+ else{x=L[a.k].g(1);h='<b>سؤال:</b> '+x.q+'<br><b>الحل:</b> '+x.a+'<br><b>الإجابة:</b> '+x.o[x.r]}
+ var el=document.querySelector('#al'+i+' .atx');el.innerHTML=h;mw(el)}
+function altOpen(i){var p=$('al'+i),r=UR[i];if(p.classList.contains('on')){p.classList.remove('on');return}
+ alt[i]={k:r?R(r[0],r[1]):i};p.innerHTML='<div class="tabs"><b data-t="0">قصة</b><b data-t="1">خطوات</b><b data-t="2">مثال محلول</b></div><div class="atx"></div>';p.classList.add('on');altTab(i,0);p.scrollIntoView({block:'nearest',behavior:'smooth'})}
+/* ----- voice ----- */
+var SS=window.speechSynthesis,SR=window.SpeechRecognition||window.webkitSpeechRecognition,ORD=['الأول','الثاني','الثالث','الرابع'],VN={'س':'سين','ص':'صاد','أ':'ألف','ب':'باء','د':'دال','م':'ميم','ن':'نون'};
+if(!SR)document.body.classList.add('nomic');
+function tsp(n){var s='';[].forEach.call(n.childNodes,function(c){var k;
+ if(c.nodeType==3)s+=c.nodeValue;
+ else if(c.nodeType==1){k=c.className||'';
+  if(/\bfx\b/.test(k))s+=' '+tsp(c.children[0])+(/\bcf\b/.test(k)?' مقسوماً على ':' على ')+tsp(c.children[1])+' ';
+  else if(/\brt\b/.test(k))s+=' '+(c.querySelector('.ix')?'الجذر التكعيبي لـ':'جذر')+' '+tsp(c.querySelector('.ov'))+' ';
+  else if(c.tagName=='SUP')s+=c.textContent=='٢'?' تربيع ':c.textContent=='٣'?' تكعيب ':' أس '+c.textContent+' ';
+  else if(!/\b(gone|flap)\b/.test(k))s+=tsp(c)}});return s}
+function nsp(s){return s.replace(/[✔✘⬆⬇⭐✎]/g,' ').replace(/(\d|[٠-٩])\s*سم(?![\u0621-\u064A])/g,'$1 سنتيمتر').replace(/([٠-٩])\s*م(?![\u0621-\u064A])/g,'$1 متر')
+ .replace(/٫/g,' فاصلة ').replace(/[٠-٩]/g,function(d){return AR.indexOf(d)}).replace(/\+/g,' زائد ').replace(/[−–]/g,' ناقص ').replace(/×/g,' ضرب ').replace(/÷/g,' مقسوماً على ')
+ .replace(/=/g,' يساوي ').replace(/≈/g,' يساوي تقريباً ').replace(/≠/g,' لا يساوي ').replace(/</g,' أصغر من ').replace(/>/g,' أكبر من ').replace(/°/g,' درجة ').replace(/∠/g,' زاوية ')
+ .replace(/جـ/g,' جيم ').replace(/سص/g,' سين صاد ').replace(/أس/g,' ألف سين ').replace(/(^|[^\u0621-\u064A\u0640])([سصأبدمن])(?![\u0621-\u064A])/g,function(m,a,b){return a+' '+VN[b]+' '}).replace(/\s+/g,' ')}
+function speak(t){if(!SS){gSay2('هذا المتصفح لا يدعم القراءة بالصوت.','sad');return}
+ if(spkOn){SS.cancel();spkOn=0;return}
+ var u=new SpeechSynthesisUtterance(t),v=SS.getVoices().filter(function(x){return /^ar/i.test(x.lang)});u.lang='ar-SA';if(v[0])u.voice=v[0];else gSay2('لا يوجد صوت عربي في جهازك، قد يكون النطق غير دقيق.','think');
+ u.rate=SET.rate;u.onend=u.onerror=function(){spkOn=0};spkOn=1;SS.speak(u)}
+function readQ(i){var c=cq[i],t;if(c.d)t=tsp($('pf'+i));else{t=tsp($('pq'+i))+'. ';[].forEach.call(document.querySelectorAll('#po'+i+' .op:not(.gone)'),function(o){t+='الخيار '+ORD[+o.dataset.i]+': '+tsp(o.querySelector('.l'))+'. '})}speak(nsp(t))}
+function parseSp(t,i){var W=[['الأول','الاول','أول','واحد','1'],['الثاني','الثانى','ثاني','اثنين','اثنان','2'],['الثالث','ثالث','ثلاثة','3'],['الرابع','رابع','أربعة','اربعة','4']],k,j,ops=[].slice.call(document.querySelectorAll('#po'+i+' .op:not(.gone)')),dg,ot;
+ t=t.replace(/[٠-٩]/g,function(d){return AR.indexOf(d)}).trim();
+ if(/خيار|الأول|الاول|الثاني|الثالث|الرابع/.test(t))for(k=0;k<4;k++)for(j=0;j<W[k].length;j++)if(t.indexOf(W[k][j])>=0)return k;
+ dg=t.replace(/[^\d]/g,'');if(dg)for(k=0;k<ops.length;k++){ot=ops[k].textContent.replace(/[٠-٩]/g,function(d){return AR.indexOf(d)}).replace(/[^\d]/g,'');if(ot&&ot==dg)return +ops[k].dataset.i}
+ return -1}
+function micAns(i){var c=cq[i],r;if(!c||c.d){gSay2('اضغط «سؤال جديد» أولاً.','think');return}
+ r=new SR();r.lang='ar-SA';r.maxAlternatives=3;gSay2('أصغي إليك… قل «الخيار الأول» أو الإجابة.','think',1);
+ r.onresult=function(e){var ts=[].map.call(e.results[0],function(x){return x.transcript}),idx=-1,k,o;for(k=0;k<ts.length&&idx<0;k++)idx=parseSp(ts[k],i);
+  if(idx<0){gSay2('لم أفهمك، جرّب قول «الخيار الثاني».','sad');return}o=document.querySelector('#po'+i+' .op[data-i="'+idx+'"]');if(o)o.click()};
+ r.onerror=function(){gSay2('تعذّر الاستماع، اسمح باستخدام الميكروفون.','sad')};try{r.start()}catch(e){}}
+/* ----- friend questions ----- */
+function esc(s){return s.replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
+function fmt(s){s=String(s).replace(/(\d)\.(\d)/g,'$1٫$2').replace(/\d/g,function(d){return AR[d]});s=esc(s);
+ return s.replace(/([٠-٩]+)\/([٠-٩]+)/g,function(m,a,b){return F(a,b)}).replace(/\^([٠-٩])/g,'<sup>$1</sup>').replace(/√([٠-٩]+)/g,function(m,a){return rt(a)})}
+function enc(a){var b=new TextEncoder().encode(JSON.stringify(a)),h='01';[].forEach.call(b,function(x){h+=(x<16?'0':'')+x.toString(16)});return 'q'+BigInt('0x'+h).toString(36)}
+function dec(s){try{if(!/^q[0-9a-z]{8,3000}$/.test(s)||!window.BigInt)return null;var n=BigInt(0),B36=BigInt(36),i,h,by=[],a,ok;
+ for(i=1;i<s.length;i++)n=n*B36+BigInt(parseInt(s[i],36));h=n.toString(16);if(h.length%2)h='0'+h;if(h.substr(0,2)!='01')return null;
+ for(i=2;i<h.length;i+=2)by.push(parseInt(h.substr(i,2),16));a=JSON.parse(new TextDecoder().decode(new Uint8Array(by)));
+ ok=Array.isArray(a)&&a.length==5&&typeof a[0]=='string'&&a[0].length<=100&&Array.isArray(a[1])&&a[1].length>=2&&a[1].length<=4&&a[1].every(function(x){return typeof x=='string'&&x.length>0&&x.length<=30})&&Number.isInteger(a[2])&&a[2]>=0&&a[2]<a[1].length&&typeof a[3]=='string'&&a[3].length<=90&&typeof a[4]=='string'&&a[4].length<=16;
+ return ok?a:null}catch(e){return null}}
+function loadF(h){var a=dec(h),k;if(!a)return false;ensure(pgs[FRP]);FQ=a;FQd=0;$('fn2').textContent=a[4]?'من '+a[4]:'';$('fq').innerHTML=fmt(a[0]);mw($('fq'));
+ $('fo').innerHTML=a[1].map(function(t,k){return '<div class="op" data-f="'+k+'"><span class="bx"></span><span class="l">'+fmt(t)+'</span></div>'}).join('');
+ [].forEach.call(document.querySelectorAll('#fo .l'),mw);$('ff').innerHTML='';return true}
+function hsh(){var h=location.hash.slice(1);if(h&&loadF(h))go(FRP)}
+function mkLink(){var q=$('wq').value.trim(),os=[].map.call(document.querySelectorAll('.wi'),function(x){return x.value.trim()}),r=+(document.querySelector('input[name=wr]:checked')||{value:0}).value,
+ e=$('we').value.trim(),o2=[],ri=-1,k,url,w=$('wl');
+ for(k=0;k<4;k++)if(os[k]){if(k==r)ri=o2.length;o2.push(os[k])}
+ if(!q||o2.length<2||ri<0){w.innerHTML='<small>اكتب السؤال وخيارين على الأقل، واجعل الدائرة عند خيار مكتوب.</small>';return}
+ url=ART+'#'+enc([q,o2,ri,e,gName]);
+ if(url.length>2400){w.innerHTML='<small>السؤال طويل، اختصره قليلاً.</small>';return}
+ w.innerHTML='<div class="lk"><input id="wlk" readonly value="'+url+'"><button id="wcp">نسخ</button>'+(navigator.share?'<button id="wsh">مشاركة</button>':'')+'<button id="wpv">جرّب سؤالك</button></div><small id="wm"></small>';gSay2('جاهز! أرسل الرابط لصديقك.','cheer')}
+document.addEventListener('focusin',function(e){if(/INPUT|TEXTAREA/.test(e.target.tagName)&&e.target.type!='radio'&&e.target.type!='range')lastF=e.target});
+document.addEventListener('click',function(e){var t=e.target,b,o,ok,w;
+ if(b=t.closest('.spk')){if(b.dataset.sq!=null)readZ(b.dataset.sq);else if(b.dataset.sb!=null)readB(+b.dataset.sb);else readQ(+b.dataset.s);return}
+ if(b=t.closest('.mic')){micAns(+b.dataset.m);return}
+ if(b=t.closest('.altb')){altOpen(+b.dataset.a);return}
+ if(b=t.closest('.tabs b')){altTab(+b.closest('.alt').id.slice(2),+b.dataset.t);return}
+ if(b=t.closest('[data-ins]')){if(lastF){var p=lastF.selectionStart||lastF.value.length;lastF.value=lastF.value.slice(0,p)+b.dataset.ins+lastF.value.slice(p);lastF.focus()}return}
+ if(t.id=='wmk'){mkLink();return}if(t.id=='rs'){resetAll();return}
+ if(t.id=='wcp'){w=$('wlk');w.select();(navigator.clipboard?navigator.clipboard.writeText(w.value):Promise.reject()).then(function(){$('wm').textContent='تم النسخ ✔'},function(){try{document.execCommand('copy');$('wm').textContent='تم النسخ ✔'}catch(x){$('wm').textContent='انسخ الرابط يدوياً'}});return}
+ if(t.id=='wsh'){navigator.share({title:'تحدٍّ من قُلَيم',text:'جرّب سؤالي في كتاب الرياضيات',url:$('wlk').value}).catch(function(){});return}
+ if(t.id=='wpv'){loadF($('wlk').value.split('#')[1]);go(FRP);return}
+ if(t.id=='fgo'){go(WKP);return}
+ if(o=t.closest('.op[data-f]')){if(FQd||!FQ)return;FQd=1;ok=+o.dataset.f==FQ[2];o.classList.add(ok?'ok':'no');if(!ok)document.querySelectorAll('#fo .op')[FQ[2]].classList.add('ok');
+  $('ff').innerHTML=(ok?'✔ أحسنت! ':'✘ ليست صحيحة. ')+(FQ[3]?fmt(FQ[3]):'');mw($('ff'));gSay(ok?'ok':'no',ok?'cheer':'sad')}});
+/* ----- progress + evolving pencil ----- */
+function save(){try{localStorage.setItem('qprog',JSON.stringify({lv:lv,mp:mp,sk:sk,bb:bb,rv:rv,eb:eb,ed:ed,dt:dt}))}catch(e){}}
+function loadP(){try{var s=JSON.parse(localStorage.getItem('qprog')||'null'),i;if(s)for(i=0;i<L.length;i++){lv[i]=Math.max(1,Math.min(3,+s.lv[i]||1));mp[i]=Math.max(0,Math.min(10,+s.mp[i]||0));sk[i]=Math.max(0,+s.sk[i]||0);bb[i]=Math.max(0,Math.min(100,+(s.bb&&s.bb[i])||0))}if(s)loadX(s)}catch(e){}}
+var STG=[0,12,35,70,120],SN=['قلم عادي','عالِم صغير','خريج متفوق','ملك الأعداد','القلم الذهبي'],gStage=0;
+function tot(){return mp.reduce(function(a,b){return a+b},0)+Math.floor(dt.pts/2)+eb.reduce(function(a,b){return a+(b>=70?10:0)},0)}
+function stg(){var t=tot(),s=0;STG.forEach(function(x,k){if(t>=x)s=k});return s}
+function evoTxt(){var t=tot(),s=stg(),nx=STG[s+1],e=$('es');if(e)e.textContent='القلم الآن: '+SN[s]+' · نقاطك '+ar(t)+(nx?' · التطور التالي عند '+ar(nx):' · وصلت إلى أعلى مرحلة!')}
+function evo(an){var s=stg(),acc='',cape='';
+ if(s>=1)acc+='<circle cx="24" cy="45" r="6.3" fill="rgba(255,255,255,.28)" stroke="#2f2619" stroke-width="1.4"/><circle cx="36" cy="45" r="6.3" fill="rgba(255,255,255,.28)" stroke="#2f2619" stroke-width="1.4"/><path d="M30.3 45H29.7M17.7 44L14 42M42.3 44L46 42" stroke="#2f2619" stroke-width="1.3"/>';
+ if(s==2)acc+='<path d="M7 7L30 -2 53 7 30 15Z" fill="#2f2619"/><path d="M19 9V15Q30 20 41 15V9" fill="#3d332a"/><path d="M53 7V20" stroke="#e0a82e" stroke-width="1.5"/><circle cx="53" cy="21" r="2" fill="#e0a82e"/>';
+ if(s>=3){cape='<path d="M14 26L46 26 59 84 1 84Z" fill="#c0392b" stroke="#2f2619" stroke-width="1.3"/>';acc+='<path d="M15 6L15 -5 22 0 30 -9 38 0 45 -5 45 6Z" fill="#ffc928" stroke="#2f2619" stroke-width="1.2"/><circle cx="30" cy="2" r="1.8" fill="#d0342c"/>'}
+ $('gcape').innerHTML=cape;$('gacc').innerHTML=acc;$('gbody').setAttribute('fill',s>=4?'#ffbe0b':'#ffd23f');gd.classList.toggle('gold',s>=4);gd.style.width=(50+s*3)+'px';gb.style.left=(8+50+s*3)+'px';
+ if(an&&s>gStage)gSay2('تطوّرتُ! أصبحت «'+SN[s]+'» ✨','cheer');gStage=s;evoTxt()}
+/* ===== v7: per-lesson question banks ===== */
+function mixLv(n){var h=Math.round(n*.25),e=Math.round(n*.35),m=n-h-e,a=[],i,t=0,ok;for(i=0;i<e;i++)a.push(1);for(i=0;i<m;i++)a.push(2);for(i=0;i<h;i++)a.push(3);
+ do{sh(a);ok=1;for(i=2;i<n;i++)if(a[i]==a[i-1]&&a[i]==a[i-2])ok=0}while(!ok&&++t<300);return a}
+function bnkNew(i,lvs){var qs=[],seen={},k,x,t,full=!lvs;lvs=lvs||mixLv(BN[i]);
+ for(k=0;k<lvs.length;k++){t=0;do{x=L[i].g(lvs[k]);t++}while(seen[x.q+x.o.join('|')]&&t<40);seen[x.q+x.o.join('|')]=1;x.l=lvs[k];qs.push(x)}
+ bank[i]={qs:qs,k:0,sc:0,res:[],full:full,d:0};return bank[i]}
+function stars(p){return p>=90?'★★★':p>=75?'★★☆':p>=50?'★☆☆':'☆☆☆'}
+var LBN=['','سهل','متوسط','متقدم'];
+function bnkHome0(i){var e=$('bs'+i),b=bb[i]||0;if(!e)return;
+ e.innerHTML='<div class="bh"><b>عدد الأسئلة: '+ar(BN[i])+'</b><span>مستويات مختلطة: سهلة ومتوسطة ومتقدمة</span>'+(b?'<span>أفضل نتيجة: '+ar(b)+'٪ '+stars(b)+'</span>':'')+'</div><button class="more" data-b0="'+i+'">ابدأ البنك</button>'}
+function bnkShow(i){var b=bank[i],e=$('bs'+i),x=b.qs[b.k],n=b.qs.length;
+ e.innerHTML='<div class="bp"><span>'+ar(b.k+1)+' من '+ar(n)+'</span><div class="bar"><i style="width:'+Math.round(b.k/n*100)+'%"></i></div><span class="lvl l'+x.l+'">'+LBN[x.l]+'</span><button class="spk" data-sb="'+i+'">🔊</button></div><div class="qt" id="bq'+i+'">'+x.q+'</div><div class="bo">'+x.o.map(function(t,j){return '<div class="op" data-bi="'+i+'" data-bj="'+j+'"><span class="bx"></span><span class="l">'+t+'</span></div>'}).join('')+'</div><div class="fbk" id="bf'+i+'"></div><button class="more" id="bn'+i+'" style="display:none" data-bn="'+i+'">'+(b.k==n-1?'عرض النتيجة':'السؤال التالي')+'</button>';
+ mw($('bq'+i));[].forEach.call(e.querySelectorAll('.bo .l'),mw);e.closest('.sc').scrollTop=0}
+function bnkEnd(i){var b=bank[i],n=b.qs.length,pct=Math.round(b.sc/n*100),miss=b.res.filter(function(r){return !r.ok}),e=$('bs'+i),old;
+ e.innerHTML='<div class="br"><div class="bigp">'+ar(pct)+'٪</div><div class="st3">'+stars(pct)+'</div><div>'+ar(b.sc)+' من '+ar(n)+'</div></div><div class="lvs">'+[1,2,3].map(function(l){var a=b.res.filter(function(r){return r.x.l==l});return '<span class="lvl l'+l+'">'+LBN[l]+' '+ar(a.filter(function(r){return r.ok}).length)+'/'+ar(a.length)+'</span>'}).join('')+'</div>'+
+ (miss.length?'<div class="mh">أخطاؤك:</div>'+miss.map(function(r){return '<div class="ms"><div>'+r.x.q+'</div><div class="mr">✔ '+r.x.o[r.x.r]+'</div></div>'}).join(''):'<div class="mh">لا أخطاء! 🎉</div>')+
+ '<div class="bbt">'+(miss.length?'<button class="more" data-brt="'+i+'">أعد أسئلة الأخطاء</button>':'')+'<button class="more" data-bnew="'+i+'">بنك جديد</button><button class="more" data-bls="'+i+'">العودة للدرس</button></div>';
+ [].forEach.call(e.querySelectorAll('.ms>div'),mw);e.closest('.sc').scrollTop=0;
+ if(b.full){old=bb[i]||0;if(pct>old)bb[i]=pct;if(pct>=80){mp[i]=Math.min(10,mp[i]+(pct>=90?6:4));pips(i)}save()}
+ gSay2(pct>=90?'نتيجة رائعة'+nm()+'! ⭐':pct>=60?'جيد'+nm()+'، راجع أخطاءك.':'لا بأس، راجع الدرس ثم أعد المحاولة.',pct>=75?'cheer':pct>=50?'happy':'sad');
+ if(b.full){evo(1);stat()}}
+function bnkAns(o){var i=+o.dataset.bi,b=bank[i],x,ok;if(!b||b.d)return;b.d=1;x=b.qs[b.k];ok=+o.dataset.bj==x.r;o.classList.add(ok?'ok':'no');
+ if(!ok)document.querySelectorAll('#bs'+i+' .bo .op')[x.r].classList.add('ok');
+ b.res.push({x:x,ok:ok});if(ok)b.sc++;else rvAdd(i,x.l);$('bf'+i).innerHTML=(ok?'✔ أحسنت! ':'✘ ليست صحيحة. ')+x.a;mw($('bf'+i));$('bn'+i).style.display='';$('bn'+i).scrollIntoView({block:'nearest',behavior:'smooth'})}
+function readB(i){var b=bank[i],t;if(!b)return;if(b.d)t=tsp($('bf'+i));else{t=tsp($('bq'+i))+'. ';[].forEach.call(document.querySelectorAll('#bs'+i+' .bo .op'),function(o){t+='الخيار '+ORD[+o.dataset.bj]+': '+tsp(o.querySelector('.l'))+'. '})}speak(nsp(t))}
+document.addEventListener('click',function(e){var t=e.target,b,i;
+ if(b=t.closest('[data-b0]')){bnkNew(+b.dataset.b0);bnkShow(+b.dataset.b0);return}
+ if(b=t.closest('[data-bnew]')){i=+b.dataset.bnew;bnkNew(i);bnkShow(i);return}
+ if(b=t.closest('[data-brt]')){i=+b.dataset.brt;bnkNew(i,bank[i].res.filter(function(r){return !r.ok}).map(function(r){return r.x.l}));bnkShow(i);return}
+ if(b=t.closest('[data-bls]')){go(cur-1);return}
+ if(b=t.closest('[data-bn]')){i=+b.dataset.bn;bank[i].k++;bank[i].d=0;if(bank[i].k>=bank[i].qs.length)bnkEnd(i);else bnkShow(i);return}
+ if(b=t.closest('.op[data-bi]'))bnkAns(b)});
+/* ===== v8: index, settings, lazy pages helpers ===== */
+var SET={fs:1,lite:0,tbl:'wood',pen:1,rate:.88};
+function setLoad(){try{var s=JSON.parse(localStorage.getItem('qset')||'null'),k;if(s)for(k in SET)if(s[k]!=null)SET[k]=s[k]}catch(e){}}
+function setSave(){try{localStorage.setItem('qset',JSON.stringify(SET))}catch(e){}}
+function setApply(){var d=document.documentElement;d.style.setProperty('--fs',SET.fs);d.classList.toggle('lite',!!SET.lite);d.setAttribute('data-table',SET.tbl);document.body.classList.toggle('nopen',!SET.pen);
+ [].forEach.call(pgs[cur].querySelectorAll('.fm,.out'),fit1)}
+function sheet(h){var s=$('sh');if(!s){s=document.createElement('div');s.id='sh';document.body.appendChild(s)}s.innerHTML='<div class="shb"><button class="shx" data-sx="1">✕</button>'+h+'</div>';s.classList.add('on')}
+function closeSh(){var s=$('sh');if(s)s.classList.remove('on')}
+function openIx(){var u='',h='<h3>الفهرس</h3>',LP=[],BP=[];
+ LI.forEach(function(v,k){if(v!=null)LP[v]=k});BI.forEach(function(v,k){if(v!=null)BP[v]=k});window.LPg=LP;window.BPg=BP;
+ L.forEach(function(l,i){if(l.u!=u){u=l.u;h+='<div class="ixu">'+u+'</div>'}
+  h+='<div class="ixr"><span class="ixt">'+l.n+' · '+l.t+'</span><span class="ixp">'+(mp[i]>=10?'✔':ar(mp[i])+'/'+ar(10))+'</span><button data-gl="'+i+'">الدرس</button><button data-gb="'+i+'">البنك'+(bb[i]?' '+ar(bb[i])+'٪':'')+'</button></div>'});
+ h+='<div class="ixu">أدواتي</div><div class="ixr"><span class="ixt">لوحتي</span><button data-gp="'+DSH+'">فتح</button></div><div class="ixr"><span class="ixt">مراجعة ذكية</span><button data-gp="'+RVP+'">فتح</button></div><div class="ixr"><span class="ixt">المحقق</span><button data-gp="'+DTP+'">فتح</button></div><div class="ixu">أخرى</div><div class="ixr"><span class="ixt">ورشة الأسئلة</span><button data-gp="'+WKP+'">فتح</button></div><div class="ixr"><span class="ixt">سؤال من صديق</span><button data-gp="'+FRP+'">فتح</button></div><div class="ixr"><span class="ixt">الختام</span><button data-gp="'+(pgs.length-1)+'">فتح</button></div>';
+ sheet(h)}
+function openSt(){var o=function(k,a){return a.map(function(x){return '<button class="sb'+(SET[k]==x[0]?' on':'')+'" data-sk="'+k+'" data-sv="'+x[0]+'">'+x[1]+'</button>'}).join('')};
+ sheet('<h3>الإعدادات</h3><div class="sr"><b>حجم الخط</b><div>'+o('fs',[[.88,'صغير'],[1,'عادي'],[1.15,'كبير'],[1.3,'أكبر']])+'</div></div><div class="sr"><b>الحركة</b><div>'+o('lite',[[0,'كاملة'],[1,'خفيفة']])+'</div></div><div class="sr"><b>الطاولة</b><div>'+o('tbl',[['wood','خشب'],['dark','داكن'],['felt','أخضر']])+'</div></div><div class="sr"><b>القلم المرشد</b><div>'+o('pen',[[1,'ظاهر'],[0,'مخفي']])+'</div></div><div class="sr"><b>سرعة القراءة</b><div>'+o('rate',[[.7,'بطيئة'],[.88,'عادية'],[1.1,'سريعة']])+'</div></div><div class="sr"><b>اسمك</b><div><input id="sn" maxlength="14" value="'+esc(gName)+'"><button class="sb" id="snb">حفظ</button></div></div><small class="cp dk">© ٢٠٢٦ · جميع حقوق هذه النسخة التفاعلية محفوظة للمعلمة نهى فائق</small>')}
+document.addEventListener('click',function(e){var t=e.target,b;
+ if(t.id=='ix'){openIx();return}if(t.id=='st'){openSt();return}
+ if(t.id=='sh'||t.closest('[data-sx]')){closeSh();return}
+ if(b=t.closest('[data-gl]')){closeSh();go(LPg[+b.dataset.gl]);return}
+ if(b=t.closest('[data-gb]')){closeSh();go(BPg[+b.dataset.gb]);return}
+ if(b=t.closest('[data-gp]')){closeSh();go(+b.dataset.gp);return}
+ if(b=t.closest('[data-sk]')){var v=b.dataset.sv;SET[b.dataset.sk]=isNaN(+v)?v:+v;setSave();setApply();openSt();return}
+ if(t.id=='snb'){var n=($('sn').value||'').trim();if(n){gName=n;try{localStorage.setItem('qn',n)}catch(x){}gSay2('تشرّفت بك'+nm()+'!','cheer');closeSh()}}});
+/* ===== v11 A: dashboard, smart review, unit exams, certificates ===== */
+var DAY=864e5,DAYS=[1,3,7,14],UG={7:0,14:1,20:2,23:3},UGL=[7,14,20,23],UROW=[[0,6],[8,13],[15,19],[21,22]],LPg=[],BPg=[];
+LI.forEach(function(v,k){if(v!=null)LPg[v]=k});BI.forEach(function(v,k){if(v!=null)BPg[v]=k});
+function uTitle(u){return L[UGL[u]].u.split(' · ')[1]}
+function uNo(u){return L[UGL[u]].u.split(' · ')[0]}
+function loadX(s){var i;
+ if(Array.isArray(s.rv))rv=s.rv.filter(function(x){return x&&Number.isInteger(x.i)&&x.i>=0&&x.i<L.length&&x.l>=1&&x.l<=3&&isFinite(x.d)&&isFinite(x.s)}).slice(0,60);
+ if(Array.isArray(s.eb))for(i=0;i<4;i++)eb[i]=Math.max(0,Math.min(100,+s.eb[i]||0));
+ if(Array.isArray(s.ed))for(i=0;i<4;i++)ed[i]=+s.ed[i]||0;
+ if(s.dt&&typeof s.dt=='object')dt={pts:Math.max(0,+s.dt.pts||0),solved:Math.max(0,+s.dt.solved||0),streak:Math.max(0,+s.dt.streak||0),best:Math.max(0,+s.dt.best||0),lv:Math.max(1,Math.min(3,+s.dt.lv||1)),ls:Math.max(0,+s.dt.ls||0)}}
+/* ----- smart review bookkeeping ----- */
+function rvAdd(i,l){var now=Date.now(),k;for(k=0;k<rv.length;k++)if(rv[k].i==i&&rv[k].l==l){rv[k].s=0;rv[k].d=Math.min(rv[k].d,now+DAY);save();return}
+ rv.push({i:i,l:l,s:0,d:now+DAY});if(rv.length>60){rv.sort(function(a,b){return b.s-a.s});rv.shift()}save()}
+function dueN(){var n=Date.now();return rv.filter(function(x){return x.d<=n}).length}
+/* ----- generic quiz engine (review + unit exams) ----- */
+function tmf(s){s=Math.max(0,Math.round(s));return '<bdi dir="ltr">'+ar(Math.floor(s/60))+':'+ar(('0'+(s%60)).slice(-2))+'</bdi>'}
+function qzNew(key,el,qs,kind,x){var z={key:key,el:el,qs:qs,k:0,sc:0,okA:[],ans:[],d:0,kind:kind,t0:Date.now(),done:0},p;for(p in x)z[p]=x[p];QZ[key]=z;return z}
+function qzShow(key){var z=QZ[key],e=$(z.el),x=z.qs[z.k],n=z.qs.length;
+ e.innerHTML='<div class="bp"><span>'+ar(z.k+1)+' من '+ar(n)+'</span><div class="bar"><i style="width:'+Math.round(z.k/n*100)+'%"></i></div><span class="lvl l'+x.l+'">'+LBN[x.l]+'</span>'+(z.lim?'<span class="tmr" id="tm'+key+'"></span>':'')+'<button class="spk" data-sq="'+key+'">🔊</button></div><div class="qt" id="qq'+key+'">'+x.q+'</div><div class="bo">'+x.o.map(function(t,j){return '<div class="op" data-qz="'+key+'" data-qj="'+j+'"><span class="bx"></span><span class="l">'+t+'</span></div>'}).join('')+'</div><div class="fbk" id="qf'+key+'"></div><button class="more" id="qn'+key+'" style="display:none" data-qn="'+key+'">'+(z.k==n-1?'عرض النتيجة':'السؤال التالي')+'</button>';
+ mw($('qq'+key));[].forEach.call(e.querySelectorAll('.bo .l'),mw);e.closest('.sc').scrollTop=0;
+ if(z.lim){var te=$('tm'+key);if(te)te.innerHTML=tmf(z.lim-(Date.now()-z.t0)/1000)}}
+function qzAns(o){var z=QZ[o.dataset.qz],x,ok;if(!z||z.d||z.done)return;z.d=1;x=z.qs[z.k];ok=+o.dataset.qj==x.r;o.classList.add(ok?'ok':'no');
+ if(!ok)document.querySelectorAll('#'+z.el+' .bo .op')[x.r].classList.add('ok');
+ z.okA[z.k]=ok;z.ans[z.k]=1;if(ok)z.sc++;
+ $('qf'+z.key).innerHTML=(ok?'✔ أحسنت! ':'✘ ليست صحيحة. ')+x.a;mw($('qf'+z.key));$('qn'+z.key).style.display='';
+ if(z.onAns)z.onAns(z,x,ok);$('qn'+z.key).scrollIntoView({block:'nearest',behavior:'smooth'})}
+function readZ(key){var z=QZ[key],t;if(!z)return;if(z.d)t=tsp($('qf'+key));else{t=tsp($('qq'+key))+'. ';[].forEach.call(document.querySelectorAll('#'+z.el+' .bo .op'),function(o){t+='الخيار '+ORD[+o.dataset.qj]+': '+tsp(o.querySelector('.l'))+'. '})}speak(nsp(t))}
+function qzEnd(key,tout){var z=QZ[key],n=z.qs.length,pct=Math.round(z.sc/n*100),used=(Date.now()-z.t0)/1000,e=$(z.el),h;if(!z||z.done)return;z.done=1;clearInterval(z.iv);e.dataset.live='';
+ h='<div class="br"><div class="bigp">'+ar(pct)+'٪</div><div class="st3">'+stars(pct)+'</div><div>'+ar(z.sc)+' من '+ar(n)+(z.lim?' · الزمن '+tmf(used):'')+(tout?' · انتهى الوقت':'')+'</div></div><div class="lvs">'+[1,2,3].map(function(l){var a=0,c=0;z.qs.forEach(function(x,k){if(x.l==l){a++;if(z.okA[k])c++}});return '<span class="lvl l'+l+'">'+LBN[l]+' '+ar(c)+'/'+ar(a)+'</span>'}).join('')+'</div>';
+ h+=z.kind=='ex'?exReport(z,pct):rvReport(z);
+ e.innerHTML=h;[].forEach.call(e.querySelectorAll('.ixt'),mw);e.closest('.sc').scrollTop=0}
+/* ----- unit exam ----- */
+function exStart(i){var u=UG[i],ls=[],tags=[],lvs=mixLv(25),qs=[],seen={},x,t,k,z;if(u==null)return;
+ for(k=UROW[u][0];k<=UROW[u][1];k++)ls.push(k);
+ while(tags.length<25)sh(ls.slice()).forEach(function(v){if(tags.length<25)tags.push(v)});
+ sh(tags);
+ for(k=0;k<25;k++){t=0;do{x=L[tags[k]].g(lvs[k]);t++}while(seen[x.q+x.o.join('|')]&&t<30);seen[x.q+x.o.join('|')]=1;x.l=lvs[k];x.t=tags[k];qs.push(x)}
+ z=qzNew('ex'+i,'bs'+i,qs,'ex',{lim:1500,u:u,i:i,onAns:function(zz,xx,ok){if(!ok)rvAdd(xx.t,xx.l)}});
+ $('bs'+i).dataset.live='1';
+ z.iv=setInterval(function(){var te=$('tm'+z.key),left=z.lim-(Date.now()-z.t0)/1000;if(z.done){clearInterval(z.iv);return}if(left<=0){clearInterval(z.iv);qzEnd(z.key,1);return}if(te){te.innerHTML=tmf(left);te.classList.toggle('low',left<120)}},500);
+ qzShow(z.key);gSay2('بالتوفيق'+nm()+'! أمامك ٢٥ دقيقة.','think')}
+function exReport(z,pct){var by={},rows,h='',u=z.u;
+ z.qs.forEach(function(x,k){var b=by[x.t]||(by[x.t]={c:0,t:0});b.t++;if(z.okA[k])b.c++});
+ rows=Object.keys(by).map(function(t){return [+t,by[t].c,by[t].t]}).sort(function(a,b){return a[1]/a[2]-b[1]/b[2]});
+ h+='<div class="mh">أداؤك في كل درس:</div>'+rows.map(function(r){var p=Math.round(r[1]/r[2]*100);return '<div class="ixr"><span class="ixt">'+L[r[0]].n+' · '+L[r[0]].t+'</span><span class="ixp">'+ar(r[1])+'/'+ar(r[2])+'</span><div class="mini"><i style="width:'+p+'%"></i></div>'+(p<60?'<button data-gl="'+r[0]+'">راجع</button>':'<span class="ixp">✔</span>')+'</div>'}).join('');
+ h+='<div class="bbt">'+(pct>=70?'<button class="more" data-cert="'+u+'">🎓 احصل على شهادتك</button>':'<span class="hint">تحتاج ٧٠٪ فأكثر للحصول على الشهادة.</span>')+'<button class="more" data-ex="'+z.i+'">امتحان جديد</button><button class="more" data-bls="'+z.i+'">العودة للدرس</button></div>';
+ if(pct>(eb[u]||0)){eb[u]=pct;ed[u]=Date.now()}save();evo(1);stat();
+ gSay2(pct>=70?'نجحت'+nm()+'! شهادتك بانتظارك 🎓':'لا بأس، راجع الدروس الضعيفة وأعد المحاولة.',pct>=70?'cheer':'sad');
+ return h}
+/* ----- smart review ----- */
+function rvHome(){var e=$('rvb'),due,n,cnt={},top=[],k,h;if(!e||e.dataset.live)return;due=dueN();n=rv.length;
+ rv.forEach(function(x){cnt[x.i]=(cnt[x.i]||0)+1});for(k in cnt)top.push([+k,cnt[k]]);top.sort(function(a,b){return b[1]-a[1]});
+ h='<div class="bh"><b>مستحقة الآن: '+ar(due)+'</b><span>المسجلة كلها: '+ar(n)+'</span></div>';
+ if(!n)h+='<p>لا توجد أسئلة للمراجعة بعد. كل سؤال تخطئ فيه في التدريب أو البنوك أو الامتحانات يُسجَّل هنا ويعود إليك بعد يوم، ثم ثلاثة أيام، ثم أسبوع، ثم أسبوعين، بأرقام جديدة.</p>';
+ else h+='<div class="qh">أكثر الدروس حاجة للمراجعة</div>'+top.slice(0,4).map(function(t){return '<div class="ixr"><span class="ixt">'+L[t[0]].n+' · '+L[t[0]].t+'</span><span class="ixp">'+ar(t[1])+'</span><button data-gl="'+t[0]+'">الدرس</button></div>'}).join('')+'<button class="more" data-rvs="1">'+(due?'ابدأ المراجعة ('+ar(Math.min(10,due))+')':'مراجعة مبكرة')+'</button>';
+ e.innerHTML=h;[].forEach.call(e.querySelectorAll('.ixt'),mw)}
+function rvStart(){var n=Date.now(),pool=rv.filter(function(x){return x.d<=n}),qs;if(!pool.length)pool=rv.slice();if(!pool.length)return;
+ pool.sort(function(a,b){return a.d-b.d});pool=pool.slice(0,10);
+ qs=pool.map(function(it){var x=L[it.i].g(it.l);x.l=it.l;x.t=it.i;x.it=it;return x});
+ qzNew('rv','rvb',qs,'rv',{});$('rvb').dataset.live='1';qzShow('rv')}
+function rvReport(z){var learned=0,h;
+ z.qs.forEach(function(x,k){var it=x.it;if(!it||!z.ans[k])return;if(z.okA[k]){it.s++;if(it.s>=DAYS.length){it.rm=1;learned++}else it.d=Date.now()+DAYS[it.s]*DAY}else{it.s=0;it.d=Date.now()+DAY}});
+ rv=rv.filter(function(it){return !it.rm});save();
+ h='<div class="mh">'+(learned?'تثبّت '+ar(learned)+' من الأسئلة نهائياً ✔':'استمر، كل مراجعة تقرّبك من الإتقان.')+'</div><p class="hint">المتبقي في قائمة المراجعة: '+ar(rv.length)+'</p><div class="bbt"><button class="more" data-rvh="1">مراجعة أخرى</button><button class="more" data-gp="'+DSH+'">لوحتي</button></div>';
+ gSay2(learned?'أحسنت'+nm()+'! تثبّتت أسئلة جديدة.':'خطوة جيدة'+nm()+'.',learned?'cheer':'happy');return h}
+/* ----- dashboard ----- */
+function dashRender(){var e=$('dsh');if(!e)return;var t=tot(),s=stg(),m=mp.filter(function(x){return x>=10}).length,due=dueN(),sg=[],k,u,v,at,weak=-1,wv=1e9,nxt=-1,rdy=-1,any=mp.some(function(x){return x>0}),okc;
+ for(k=0;k<L.length;k++){if(L[k].gen)continue;at=mp[k]>0||bb[k]>0;if(at&&mp[k]<10){v=mp[k]*10+(bb[k]||0)*.4;if(v<wv){wv=v;weak=k}}if(nxt<0&&!at)nxt=k}
+ for(u=0;u<4;u++){if(eb[u]>=70||rdy>=0)continue;okc=true;for(k=UROW[u][0];k<=UROW[u][1];k++)if(mp[k]<6)okc=false;if(okc)rdy=u}
+ if(due)sg.push(['🔁','عندك '+ar(due)+' من أسئلة المراجعة الذكية تنتظرك','ابدأ','data-gp="'+RVP+'"']);
+ if(rdy>=0)sg.push(['📝','أنت جاهز لامتحان «'+uTitle(rdy)+'»','ابدأ الامتحان','data-exs="'+UGL[rdy]+'"']);
+ if(weak>=0)sg.push(['🎯','قوِّ «'+L[weak].t+'» (إتقانك '+ar(mp[weak])+' من '+ar(10)+')','افتح الدرس','data-gl="'+weak+'"']);
+ if(nxt>=0)sg.push([any?'▶':'🚀',(any?'تابع من':'ابدأ من')+' «'+L[nxt].t+'»','افتح','data-gl="'+nxt+'"']);
+ sg.push(['🕵','قضية جديدة في مكتب المحقق','افتح','data-gp="'+DTP+'"']);
+ sg=sg.slice(0,4);
+ e.innerHTML='<p>أهلاً'+nm()+'! هذه اقتراحات اليوم.</p><div class="chips"><span>⭐ '+ar(t)+(t>=3&&t<=10?' نقاط':' نقطة')+'</span><span>'+SN[s]+'</span><span>✔ '+ar(m)+' من '+ar(L.length)+'</span></div><div class="qh">✨ اقتراحات اليوم</div>'+sg.map(function(c){return '<div class="sg"><span class="sgi">'+c[0]+'</span><span class="sgt">'+c[1]+'</span><button '+c[3]+'>'+c[2]+'</button></div>'}).join('')+'<div class="qh">🧰 أدواتي</div><div class="tl"><button data-gp="'+RVP+'">🔁 مراجعة ذكية'+(due?' ('+ar(due)+')':'')+'</button><button data-gp="'+DTP+'">🕵 المحقق</button><button data-exl="1">📝 الامتحانات</button><button data-cl="1">🎓 شهاداتي</button></div>';
+ [].forEach.call(e.querySelectorAll('.sgt'),mw)}
+function pgShow(j){if(j==DSH)dashRender();else if(j==RVP)rvHome();else if(j==DTP)detHome()}
+function bnkHome(i){bnkHome0(i);var u=UG[i],e=$('bs'+i);if(u==null||!e||e.dataset.live)return;
+ e.insertAdjacentHTML('beforeend','<div class="bh ex"><b>امتحان الوحدة</b><span>عدد الأسئلة: '+ar(25)+' · الزمن: '+ar(25)+' دقيقة · مختلطة من كل دروس الوحدة</span>'+(eb[u]?'<span>أفضل نتيجة: '+ar(eb[u])+'٪ '+stars(eb[u])+'</span>':'')+'</div><button class="more" data-ex="'+i+'">ابدأ الامتحان</button>')}
+/* ----- certificates ----- */
+function exList(){var h='<h3>امتحانات الوحدات</h3><p class="hint">مسائل مختلطة بوقت محدد، والنجاح ٧٠٪ فأكثر.</p>';
+ UGL.forEach(function(g,u){h+='<div class="ixr"><span class="ixt">'+uNo(u)+' · '+uTitle(u)+'</span><span class="ixp">'+(eb[u]?ar(eb[u])+'٪':'—')+'</span><button data-exs="'+g+'">ابدأ</button></div>'});sheet(h)}
+function certList(){var h='<h3>شهاداتي</h3><p class="hint">تُفتح الشهادة عند تحقيق ٧٠٪ فأكثر في امتحان الوحدة.</p>';
+ UGL.forEach(function(g,u){var ok=eb[u]>=70;h+='<div class="ixr"><span class="ixt">'+(ok?'🎓':'🔒')+' '+uNo(u)+' · '+uTitle(u)+'</span><span class="ixp">'+(eb[u]?ar(eb[u])+'٪':'—')+'</span>'+(ok?'<button data-cert="'+u+'">عرض</button>':'<button data-exs="'+g+'">امتحان</button>')+'</div>'});sheet(h)}
+function certSVG(u){var nm0=gName||'الطالب المتميز',d=new Date(ed[u]||Date.now()),ds=ar(d.getDate())+' / '+ar(d.getMonth()+1)+' / '+ar(d.getFullYear()),pct=eb[u],
+ T=function(x,y,t,sz,fill,fw,ff){return '<text x="'+x+'" y="'+y+'" text-anchor="middle" font-size="'+sz+'" fill="'+fill+'"'+(fw?' font-weight="'+fw+'"':'')+(ff?' font-family="'+ff+'"':'')+'>'+t+'</text>'},
+ co=function(x,y,r){return '<path d="M'+x+' '+y+'h'+(60*r)+'M'+x+' '+y+'v'+(60*r)+'" stroke="#c9a227" stroke-width="3" fill="none"/><circle cx="'+x+'" cy="'+y+'" r="7" fill="#c9a227"/>'};
+ return '<svg id="certsvg" viewBox="0 0 800 560" xmlns="http://www.w3.org/2000/svg" font-family="Amiri,serif"><rect width="800" height="560" fill="#fbf4e1"/><rect x="16" y="16" width="768" height="528" fill="none" stroke="#5a35a8" stroke-width="7"/><rect x="32" y="32" width="736" height="496" fill="none" stroke="#c9a227" stroke-width="2.5"/>'+co(46,46,1)+'<g transform="translate(800 0) scale(-1 1)">'+co(46,46,1)+'</g><g transform="translate(0 560) scale(1 -1)">'+co(46,46,1)+'</g><g transform="translate(800 560) scale(-1 -1)">'+co(46,46,1)+'</g>'
+ +T(400,112,'شهادة تقدير',58,'#3a1f7a',0,'Aref Ruqaa,Amiri,serif')+T(400,168,'تُمنح هذه الشهادة إلى',26,'#5b4a2a')
+ +T(400,244,esc(nm0),54,'#7a1f2b',700,'Aref Ruqaa,Amiri,serif')+'<path d="M200 262H600" stroke="#c9a227" stroke-width="2"/>'
+ +T(400,312,'تقديراً لإتقان '+uNo(u)+': «'+uTitle(u)+'»',26,'#2f2619')+T(400,352,'في مادة الرياضيات للصف الثامن الأساسي',24,'#2f2619')
+ +T(400,394,'بنتيجة '+ar(pct)+'٪ في امتحان الوحدة',26,'#3a1f7a',700)+T(400,432,stars(pct),30,'#c9a227')
+ +T(150,498,'التاريخ: '+ds,22,'#5b4a2a')+T(400,521,'© جميع الحقوق محفوظة للمعلمة نهى فائق',13,'#8a7a55')+T(650,498,'مرشدك قُلَيم',24,'#5b4a2a',700)
+ +'<circle cx="400" cy="486" r="34" fill="#c9a227" stroke="#8a6d12" stroke-width="3"/><circle cx="400" cy="486" r="27" fill="none" stroke="#fff6cf" stroke-width="2"/>'+T(400,497,'★',32,'#fff6cf')+'</svg>'}
+function certOpen(u){var h;if(!(eb[u]>=70)){gSay2('اجتز الامتحان بنسبة ٧٠٪ فأكثر لتحصل على الشهادة.','think');return}
+ h='<div class="cert">'+certSVG(u)+'</div><div class="bbt"><button class="more" data-cshare="'+u+'">مشاركة كصورة</button><button class="more" data-cprint="1">طباعة</button></div><div class="sr"><b>الاسم على الشهادة</b><div><input id="cn" maxlength="14" value="'+esc(gName)+'"><button class="sb" data-cname="'+u+'">تحديث</button></div></div><p class="hint">إن لم يعمل زر المشاركة أو الطباعة في جهازك فالتقط لقطة شاشة للشهادة.</p>';
+ sheet(h);gSay2('مبروك'+nm()+'! 🎓','cheer')}
+function certShare(){var svg=$('certsvg');if(!svg)return;var xml=new XMLSerializer().serializeToString(svg),img=new Image(),b=new Blob([xml],{type:'image/svg+xml;charset=utf-8'}),url=URL.createObjectURL(b),fail=function(){gSay2('تعذّر إنشاء الصورة، التقط لقطة شاشة.','sad')};
+ img.onload=function(){try{var c=document.createElement('canvas');c.width=1600;c.height=1120;c.getContext('2d').drawImage(img,0,0,1600,1120);URL.revokeObjectURL(url);
+  c.toBlob(function(bl){if(!bl){fail();return}var f=new File([bl],'certificate.png',{type:'image/png'});
+   if(navigator.canShare&&navigator.canShare({files:[f]}))navigator.share({files:[f],title:'شهادة تقدير'}).catch(function(){});
+   else{var a=document.createElement('a');a.href=URL.createObjectURL(bl);a.download='certificate.png';document.body.appendChild(a);a.click();a.remove();gSay2('إن لم تُحفظ الصورة فالتقط لقطة شاشة.','think')}},'image/png')}catch(e){fail()}};
+ img.onerror=fail;img.src=url}
+function certPrint(){document.body.classList.add('pc');try{window.print()}catch(e){gSay2('الطباعة غير متاحة هنا، التقط لقطة شاشة.','think')}setTimeout(function(){document.body.classList.remove('pc')},1500)}
+document.addEventListener('click',function(e){var t=e.target,b,i;
+ if(b=t.closest('[data-ex]')){i=+b.dataset.ex;exStart(i);return}
+ if(b=t.closest('[data-exs]')){i=+b.dataset.exs;closeSh();go(BPg[i]);exStart(i);return}
+ if(t.closest('[data-exl]')){exList();return}
+ if(t.closest('[data-cl]')){certList();return}
+ if(b=t.closest('[data-cert]')){certOpen(+b.dataset.cert);return}
+ if(t.closest('[data-cshare]')){certShare();return}
+ if(t.closest('[data-cprint]')){certPrint();return}
+ if(b=t.closest('[data-cname]')){var n=($('cn').value||'').trim();if(n){gName=n;try{localStorage.setItem('qn',n)}catch(x){}certOpen(+b.dataset.cname)}return}
+ if(t.closest('[data-rvs]')){rvStart();return}
+ if(t.closest('[data-rvh]')){$('rvb').dataset.live='';rvHome();return}
+ if(b=t.closest('[data-qn]')){var z=QZ[b.dataset.qn];if(!z)return;z.k++;z.d=0;if(z.k>=z.qs.length)qzEnd(z.key);else qzShow(z.key);return}
+ if(b=t.closest('.op[data-qz]'))qzAns(b)});
+/* ===== v11 B: the detective ===== */
+var DEVL=['','سهل','متوسط','متقدم'],DC=null,DCd=0;
+function dJoin(a){return a.map(function(x){return ar(x)}).join('، ')}
+function dT1(){var d=R(5,12),a=R(1,d-2),b=R(1,d-2),s=a+b,L0='المسألة: '+F(ar(a),ar(d))+' + '+F(ar(b),ar(d));
+ if(R(0,1))return{t:'جمع كسرين مقامهما واحد',lines:[L0,'أجمع البسطين: '+ar(a)+' + '+ar(b)+' = '+ar(s),'أجمع المقامين أيضاً: '+F(ar(s),ar(2*d)),'الناتج: '+F(ar(s),ar(2*d))],bad:2,why:'عند جمع كسرين لهما المقام نفسه نجمع البسطين فقط ونُبقي المقام كما هو: '+F(ar(s),ar(d))};
+ return{t:'جمع كسرين مقامهما واحد',lines:[L0,'أجمع البسطين: '+ar(a)+' + '+ar(b)+' = '+ar(s+1),'أُبقي المقام كما هو: '+F(ar(s+1),ar(d)),'الناتج: '+F(ar(s+1),ar(d))],bad:1,why:ar(a)+' + '+ar(b)+' = '+ar(s)+' وليس '+ar(s+1)}}
+function dT2(){var m=R(6,20),a=R(1,4),b=R(1,5),v=sh([m-a,m+a,m-b,m+b]),S0=4*m,L0='القيم: '+dJoin(v),sm=v.map(function(x){return ar(x)}).join(' + ');
+ if(R(0,1))return{t:'الوسط الحسابي',lines:[L0,'المجموع = '+sm+' = '+ar(S0+4),'عدد القيم = '+ar(4),'الوسط = '+F(ar(S0+4),ar(4))+' = '+ar(m+1)],bad:1,why:'مجموع القيم هو '+ar(S0)+' وليس '+ar(S0+4)};
+ return{t:'الوسط الحسابي',lines:[L0,'المجموع = '+sm+' = '+ar(S0),'عدد القيم = '+ar(4),'الوسط = المجموع × العدد = '+ar(S0)+' × '+ar(4)+' = '+ar(S0*4)],bad:3,why:'الوسط الحسابي = المجموع ÷ عدد القيم: '+F(ar(S0),ar(4))+' = '+ar(m)}}
+function dT3(){var v=[],M,mn,s2;while(v.length<5){var x=R(3,40);if(v.indexOf(x)<0)v.push(x)}
+ var s=v.slice().sort(function(a,b){return a-b});M=s[4];mn=s[0];s2=s[3];
+ var L0='القيم: '+dJoin(v);
+ if(R(0,1))return{t:'المدى',lines:[L0,'أكبر قيمة = '+ar(M),'أصغر قيمة = '+ar(mn),'المدى = '+ar(M)+' + '+ar(mn)+' = '+ar(M+mn)],bad:3,why:'المدى = أكبر قيمة − أصغر قيمة = '+ar(M-mn)};
+ return{t:'المدى',lines:[L0,'أكبر قيمة = '+ar(s2),'أصغر قيمة = '+ar(mn),'المدى = '+ar(s2)+' − '+ar(mn)+' = '+ar(s2-mn)],bad:1,why:'أكبر قيمة في المجموعة هي '+ar(M) +' وليست '+ar(s2)}}
+function dT4(){var T=P([120,240,90,60,180]),n,ang;n=T==240?2*R(5,50):R(5,Math.floor(T/3));ang=n*360/T;
+ var L0='المعطيات: '+ar(n)+' من '+ar(T);
+ return{t:'زاوية القطاع الدائري',lines:[L0,'النسبة = '+F(ar(n),ar(T)),'الزاوية = '+F(ar(n),ar(T))+' × '+ar(180)+' = '+ar(+(n*180/T).toFixed(2))+'°'],bad:2,why:'الدائرة كلها ٣٦٠° فنضرب النسبة في ٣٦٠: '+F(ar(n),ar(T))+' × '+ar(360)+' = '+ar(ang)+'°'}}
+function dT5(){var a=R(2,9),sx='س'+S;
+ if(R(0,1))return{t:'مربع مجموع حدين',lines:['فُكّ (س + '+ar(a)+')'+S,'(س + '+ar(a)+')'+S+' = (س + '+ar(a)+')(س + '+ar(a)+')','= '+sx+' + '+ar(a)+'س + '+ar(a)+'س + '+ar(a*a),'= '+sx+' + '+ar(a)+'س + '+ar(a*a)],bad:3,why:'الحدان الأوسطان متماثلان فمجموعهما '+ar(a)+'س + '+ar(a)+'س = '+ar(2*a)+'س'};
+ return{t:'مربع مجموع حدين',lines:['فُكّ (س + '+ar(a)+')'+S,'(س + '+ar(a)+')'+S+' = (س + '+ar(a)+')(س + '+ar(a)+')','= '+sx+' + '+ar(a)+'س + '+ar(a)+'س + '+ar(2*a),'= '+sx+' + '+ar(2*a)+'س + '+ar(2*a)],bad:2,why:ar(a)+' × '+ar(a)+' = '+ar(a*a)+' وليس '+ar(2*a)}}
+function dT6(){var m,n,p,q,k,ok=0;while(!ok){m=R(2,9);n=R(2,9);if(m>n){k=m;m=n;n=k}
+  for(p=1;p<=m*n&&!ok;p++)if((m*n)%p==0){q=m*n/p;if(p<=q&&!(p==m&&q==n)){ok=1;break}}}
+ var s=m+n,pr=m*n;
+ return{t:'تحليل العبارة التربيعية',lines:['حلّل: '+pl(1,s,pr),'أبحث عن عددين حاصل ضربهما '+ar(pr)+' ومجموعهما '+ar(s),'العددان: '+ar(p)+' و '+ar(q),'= (س + '+ar(p)+')(س + '+ar(q)+')'],bad:2,why:'حاصل ضرب '+ar(p)+' و '+ar(q)+' صحيح، لكن مجموعهما '+ar(p+q)+' وليس '+ar(s)+'. العددان الصحيحان هما '+ar(m)+' و '+ar(n)}}
+function dT7(){var k=R(2,9),sx='س'+S;
+ if(R(0,1))return{t:'الفرق بين مربعين',lines:['حلّل: '+sx+' − '+ar(k*k),'الحدان مربعان كاملان: '+sx+' و '+ar(k*k)+' = '+ar(k)+S,'القاعدة: أ'+S+' − ب'+S+' = (أ − ب)'+S,'= (س − '+ar(k)+')'+S],bad:2,why:'القاعدة الصحيحة: أ'+S+' − ب'+S+' = (أ − ب)(أ + ب)، فالناتج (س − '+ar(k)+')(س + '+ar(k)+')'};
+ return{t:'الفرق بين مربعين',lines:['حلّل: '+sx+' − '+ar(k*k),'الحدان مربعان كاملان: '+sx+' و '+ar(k*k)+' = '+ar(2*k)+S,'القاعدة: أ'+S+' − ب'+S+' = (أ − ب)(أ + ب)','= (س − '+ar(2*k)+')(س + '+ar(2*k)+')'],bad:1,why:ar(k*k)+' = '+ar(k)+S+' وليس '+ar(2*k)+S}}
+function dT8(){var t=P(TR.slice(0,5)),a=t[0],b=t[1],c=t[2],L0='مثلث قائم ضلعا قائمته '+ar(a)+' و '+ar(b)+'، أجد الوتر',X=a*a+b*b;
+ if(R(0,1))return{t:'نظرية فيثاغورس',lines:[L0,'القاعدة: جـ'+S+' = أ'+S+' + ب'+S,'جـ'+S+' = '+ar(a)+S+' + '+ar(b)+S+' = '+ar(X),'جـ = '+ar(X)],bad:3,why:'نأخذ الجذر التربيعي: جـ = '+rt(ar(X))+' = '+ar(c)};
+ return{t:'نظرية فيثاغورس',lines:[L0,'القاعدة: جـ = أ + ب','جـ = '+ar(a)+' + '+ar(b)+' = '+ar(a+b),'الوتر = '+ar(a+b)],bad:1,why:'القاعدة الصحيحة: جـ'+S+' = أ'+S+' + ب'+S+' وليست جـ = أ + ب'}}
+function dT9(){var a,b,c,d,x,y;do{b=R(2,9);d=R(2,9);a=R(1,b-1);c=R(1,d-1);x=a*d;y=c*b}while(b==d||x==y);var big=x>y?F(ar(a),ar(b)):F(ar(c),ar(d)),sml=x>y?F(ar(c),ar(d)):F(ar(a),ar(b)),L0='قارن بين '+F(ar(a),ar(b))+' و '+F(ar(c),ar(d)),r=x>y?F(ar(a),ar(b)):F(ar(c),ar(d)),w=x>y?F(ar(c),ar(d)):F(ar(a),ar(b));
+ if(R(0,1))return{t:'مقارنة كسرين',lines:[L0,'أضرب بالتبادل: '+ar(a)+' × '+ar(d)+' = '+ar(x),'ثم: '+ar(c)+' × '+ar(b)+' = '+ar(y),(x>y?ar(x)+' > '+ar(y):ar(x)+' < '+ar(y))+' إذن الأكبر هو '+w],bad:3,why:'الناتج الأكبر يدل على الكسر الأكبر، فالأكبر هو '+r};
+ return{t:'مقارنة كسرين',lines:[L0,'أضرب بالتبادل: '+ar(a)+' × '+ar(d)+' = '+ar(x),'ثم: '+ar(c)+' × '+ar(b)+' = '+ar(y+2),(x>y+2?ar(x)+' > '+ar(y+2):ar(x)+' < '+ar(y+2))+' إذن الأكبر هو '+(x>y+2?F(ar(a),ar(b)):F(ar(c),ar(d)))],bad:2,why:ar(c)+' × '+ar(b)+' = '+ar(y)+' وليس '+ar(y+2)}}
+function dT10(){var a=R(3,9),c=R(1,a-1),b=R(1,9),d=R(1,9),e0='('+pl(0,a,b)+') − ('+pl(0,c,d)+')';
+ if(R(0,1))return{t:'طرح المقادير الجبرية',lines:['احسب '+e0,'أوزّع الإشارة السالبة: '+ar(a)+'س + '+ar(b)+' − '+ar(c)+'س + '+ar(d),'أجمع المتشابهة: ('+ar(a)+' − '+ar(c)+')س + ('+ar(b)+' + '+ar(d)+')','الناتج: '+pl(0,a-c,b+d)],bad:1,why:'الإشارة السالبة تشمل كل حدود القوس: − '+ar(c)+'س − '+ar(d)};
+ return{t:'طرح المقادير الجبرية',lines:['احسب '+e0,'أوزّع الإشارة السالبة: '+ar(a)+'س + '+ar(b)+' − '+ar(c)+'س − '+ar(d),'أجمع المتشابهة: ('+ar(a)+' + '+ar(c)+')س + ('+ar(b)+' − '+ar(d)+')','الناتج: '+pl(0,a+c,b-d)],bad:2,why:'معامل س بعد التوزيع هو '+ar(a)+' − '+ar(c)+' وليس مجموعهما'}}
+function dT11(){var m=R(8,20),d=R(2,6),v1=m-d,v2=m+d;
+ if(R(0,1))return{t:'التباين',lines:['القيمتان: '+ar(v1)+' و '+ar(v2),'الوسط = '+F(ar(2*m),ar(2))+' = '+ar(m),'مربعا الانحرافين: '+ar(d*d)+' و '+ar(d*d),'التباين = '+ar(d*d)+' + '+ar(d*d)+' = '+ar(2*d*d)],bad:3,why:'التباين = مجموع المربعات ÷ عددها: '+F(ar(2*d*d),ar(2))+' = '+ar(d*d)};
+ return{t:'التباين',lines:['القيمتان: '+ar(v1)+' و '+ar(v2),'الوسط = '+F(ar(2*m),ar(2))+' = '+ar(m),'الانحرافان: '+ar(d)+' و '+ar(d),'التباين = '+F(ar(2*d),ar(2))+' = '+ar(d)],bad:2,why:'يجب تربيع كل انحراف: '+ar(d)+S+' = '+ar(d*d)}}
+function dT12(){var k=R(2,7),n=P([2,3,5,6]),N0=k*k*n;
+ if(R(0,1))return{t:'تبسيط الجذر',lines:['بسّط '+rt(ar(N0)),ar(N0)+' = '+ar(k*k)+' × '+ar(n),rt(ar(N0))+' = '+rt(ar(k*k))+' × '+rt(ar(n)),'= '+tm(ar(k*k),ar(n))],bad:3,why:'جذر '+ar(k*k)+' هو '+ar(k)+' فالناتج '+tm(ar(k),ar(n))};
+ return{t:'تبسيط الجذر',lines:['بسّط '+rt(ar(N0)),ar(N0)+' = '+ar(k*k)+' × '+ar(n),rt(ar(N0))+' = '+rt(ar(k*k))+' + '+rt(ar(n)),'= '+ar(k)+' + '+rt(ar(n))],bad:2,why:'جذر حاصل الضرب = حاصل ضرب الجذرين: '+rt(ar(k*k))+' × '+rt(ar(n))}}
+function dT13(){var a=R(2,5),k=R(2,5),m=R(1,5),e0='('+ar(a*k)+'س'+S3+' − '+ar(a*m)+'س'+S+') ÷ '+ar(a)+'س'+S,q1=ar(a*k)+'س'+S3+' ÷ '+ar(a)+'س'+S,q2=ar(a*m)+'س'+S+' ÷ '+ar(a)+'س'+S;
+ if(R(0,1))return{t:'قسمة المقادير الجبرية',lines:['احسب '+e0,'أقسم كل حد على '+ar(a)+'س'+S,q1+' = '+cf(k)+'س ، و '+q2+' = '+ar(m),'الناتج: '+pl(0,k,m)],bad:3,why:'الإشارة بين الحدين تبقى ناقص: '+pl(0,k,-m)};
+ return{t:'قسمة المقادير الجبرية',lines:['احسب '+e0,'أقسم كل حد على '+ar(a)+'س'+S,q1+' = '+cf(k)+'س'+S+' ، و '+q2+' = '+ar(m),'الناتج: '+pl(k,0,-m)],bad:2,why:'نطرح الأسس: س'+S3+' ÷ س'+S+' = س وليس س'+S}}
+var DPOOL=[[dT1,dT2,dT3,dT4],[dT4,dT5,dT6,dT7,dT8,dT9],[dT10,dT11,dT12,dT13,dT6,dT8]];
+function dcase(l){var c=P(DPOOL[l-1])();c.l=l;return c}
+function detHome(){var e=$('dtb');if(!e||e.dataset.live)return;
+ e.innerHTML='<div class="bh"><b>اكتشف الخطأ</b><span>أمامك حل جاهز فيه خطأ واحد مخفي، اضغط على السطر الخاطئ.</span><span>قضايا محلولة: '+ar(dt.solved)+' · أفضل سلسلة: '+ar(dt.best)+' · نقاطك: '+ar(dt.pts)+'</span></div><button class="more" data-dst="1">ابدأ قضية</button>'}
+function detNew(){var e=$('dtb'),c=dcase(dt.lv);DC=c;DCd=0;e.dataset.live='1';
+ e.innerHTML='<div class="bp"><span class="lvl l'+c.l+'">'+DEVL[c.l]+'</span><span>'+c.t+'</span><span class="hint">سلسلتك: '+ar(dt.streak)+'</span></div><div class="dcs">'+c.lines.map(function(t,k){return '<div class="dln" data-dl="'+k+'"><span class="dnn">'+ar(k+1)+'</span><span class="dtx">'+t+'</span></div>'}).join('')+'</div><div class="fbk" id="dtf"></div><button class="more" id="dtn" style="display:none" data-dst="1">قضية جديدة</button>';
+ [].forEach.call(e.querySelectorAll('.dtx'),mw);e.closest('.sc').scrollTop=0}
+function detPick(row){if(!DC||DCd)return;DCd=1;var k=+row.dataset.dl,ok=k==DC.bad,all=document.querySelectorAll('#dtb .dln');
+ row.classList.add(ok?'ok':'no');if(!ok)all[DC.bad].classList.add('bd');
+ if(ok){dt.solved++;dt.streak++;dt.best=Math.max(dt.best,dt.streak);dt.pts+=DC.l;dt.ls++;if(dt.ls>=2&&dt.lv<3){dt.lv++;dt.ls=0}}else{dt.streak=0;dt.ls=0;if(dt.lv>1)dt.lv--}
+ $('dtf').innerHTML=(ok?'✔ أحسنت أيها المحقق! ':'✘ ليس هذا السطر. ')+'الخطأ في السطر '+ar(DC.bad+1)+': '+DC.why;mw($('dtf'));$('dtn').style.display='';$('dtn').scrollIntoView({block:'nearest',behavior:'smooth'});
+ save();evo(1);stat();gSay2(ok?'قضية محلولة'+nm()+'! 🕵':'لا بأس، المحقق الجيد يتعلم من أخطائه.',ok?'cheer':'sad')}
+document.addEventListener('click',function(e){var b;if(e.target.closest('[data-dst]')){detNew();return}if(b=e.target.closest('.dln'))detPick(b)});
+/* ===== v11 C: richer question variety ===== */
+var TX=TR.concat([[20,21,29],[9,40,41],[12,35,37],[10,24,26],[18,24,30],[21,28,35],[24,32,40],[30,40,50],[16,30,34],[11,60,61]]);
+function gP(l){var t=P(l==1?TR.slice(0,5):TX),a=t[0],b=t[1],c=t[2],x1=R(0,6),y1=R(0,6);
+ if(l==1){if(R(0,1))return mc('المسافة بين النقطتين (٠، ٠) و ('+ar(a)+'، '+ar(b)+') تساوي:',ar(c),[ar(a+b),ar(c+1),ar(c-1)],'المسافة = '+rt(ar(a*a+b*b))+' = '+ar(c));
+  return mc('في المثلث القائم الذي وتره جـ وضلعا قائمته أ و ب، العلاقة الصحيحة هي:','جـ'+S+' = أ'+S+' + ب'+S,['جـ = أ + ب','أ'+S+' = جـ'+S+' + ب'+S,'جـ'+S+' = أ'+S+' − ب'+S],'مجموع مربعي ضلعي القائمة يساوي مربع الوتر')}
+ if(l==2){if(R(0,1))return mc('مثلث متساوي الساقين طول كل ساق '+ar(c)+' سم وقاعدته '+ar(2*a)+' سم. فما ارتفاعه؟',ar(b)+' سم',[ar(a)+' سم',ar(c-a)+' سم',ar(b+1)+' سم'],'نصف القاعدة '+ar(a)+' والساق '+ar(c)+': الارتفاع = '+rt(ar(c*c-a*a))+' = '+ar(b));
+  return mc('المسافة بين النقطتين ('+ar(x1)+'، '+ar(y1)+') و ('+ar(x1+a)+'، '+ar(y1+b)+') تساوي:',ar(c),[ar(a+b),ar(c+2),ar(c-1)],'فرق الإحداثيين '+ar(a)+' و '+ar(b)+' فالمسافة '+rt(ar(a*a+b*b))+' = '+ar(c))}
+ return R(0,1)?mc('محيط مثلث قائم ضلعا قائمته '+ar(a)+' سم و '+ar(b)+' سم يساوي:',ar(a+b+c)+' سم',[ar(a+b)+' سم',ar(2*c+a)+' سم',ar(a+b+c+2)+' سم'],'الوتر = '+ar(c)+' فالمحيط = '+ar(a)+' + '+ar(b)+' + '+ar(c)+' = '+ar(a+b+c)):mc('مساحة مثلث قائم وتره '+ar(c)+' سم وأحد ضلعي قائمته '+ar(a)+' سم تساوي:',ar(a*b/2)+' سم'+S,[ar(a*b)+' سم'+S,ar(+(a*c/2).toFixed(1))+' سم'+S,ar(a+b+c)+' سم'+S],'الضلع الآخر = '+ar(b)+' فالمساحة = '+F(ar(a)+' × '+ar(b),ar(2))+' = '+ar(a*b/2))}
+function gCv(l){var t=P(l==1?TR.slice(0,5):TX),a=t[0],b=t[1],c=t[2];
+ if(l==1)return mc('إذا كان المثلث الذي أضلاعه '+ar(a)+' و '+ar(b)+' و س قائماً وتره س، فإن س =',ar(c),[ar(a+b),ar(c+1),ar(c-1)],'س'+S+' = '+ar(a*a)+' + '+ar(b*b)+' = '+ar(c*c));
+ if(l==2)return mc('مثلث أضلاعه '+ar(a)+' و '+ar(b)+' و '+ar(c)+'. أي العبارات صحيحة؟','المثلث قائم لأن '+ar(a*a)+' + '+ar(b*b)+' = '+ar(c*c),['المثلث قائم لأن '+ar(a)+' + '+ar(b)+' > '+ar(c),'المثلث غير قائم لأن أضلاعه مختلفة','المثلث غير قائم لأن '+ar(a*a)+' + '+ar(b*b)+' ≠ '+ar(c*c)],'نتحقق من مربعات الأضلاع: '+ar(a*a)+' + '+ar(b*b)+' = '+ar(c*c));
+ return mc('مثلث قائم أضلاعه '+ar(a)+' و س و '+ar(c)+' ووتره '+ar(c)+'، فإن س =',ar(b),[ar(c-a),ar(b+1),ar(a+c)],'س'+S+' = '+ar(c*c)+' − '+ar(a*a)+' = '+ar(b*b))}
+function gCg(l){var s=['أب','بج','أج'],ts=['سص','صع','سع'],an=['أ','ب','جـ'],tn=['س','ص','ع'],k=R(0,2),v=R(4,15),a1,a2,k2;
+ if(l==1)return mc('△أبج ≡ △سصع. إذا كان '+s[k]+' = '+ar(v)+' سم فإن '+ts[k]+' =',ar(v)+' سم',[ar(v+1)+' سم',ar(v*2)+' سم',ar(v-1)+' سم'],'الأضلاع المتناظرة في المثلثين المتطابقين متساوية');
+ if(l==2){a1=R(35,85);return mc('△أبج ≡ △سصع. إذا كان قياس ∠'+an[k]+' = '+ar(a1)+'° فإن قياس ∠'+tn[k]+' =',ar(a1)+'°',[ar(180-a1)+'°',ar(a1+10)+'°',ar(a1-10)+'°'],'الزوايا المتناظرة في المثلثين المتطابقين متساوية')}
+ a1=R(40,80);a2=R(30,60);return mc('△أبج ≡ △سصع، ∠أ = '+ar(a1)+'° و ∠ب = '+ar(a2)+'°. فقياس ∠ع =',ar(180-a1-a2)+'°',[ar(a1+a2)+'°',ar(180-a1)+'°',ar(360-a1-a2)+'°'],'∠ع تناظر ∠جـ، ومجموع زوايا المثلث ١٨٠°: '+ar(180)+' − '+ar(a1+a2)+' = '+ar(180-a1-a2))}
+function gSm(l){var p=P([1,2,3,4]),q=p+R(1,3),k=R(2,6),m2,sc;while(gcd(p,q)>1)q++;
+ if(l==1)return mc('نسبة التشابه بين مثلثين '+ar(p)+' : '+ar(q)+'، ومحيط الأول '+ar(p*k*3)+' سم. فمحيط الثاني:',ar(q*k*3)+' سم',[ar(p*k*3+q-p)+' سم',ar(q*k)+' سم',ar(p*q*k)+' سم'],'محيط الثاني = '+ar(p*k*3)+' × '+F(ar(q),ar(p))+' = '+ar(q*k*3));
+ if(l==2){m2=R(2,5);return mc('مثلثان متشابهان، ضلعان متناظران فيهما '+ar(p*m2)+' و '+ar(q*m2)+' سم. إذا كان ضلع آخر في الأول '+ar(p*k)+' سم فالمناظر له في الثاني:',ar(q*k)+' سم',[ar(p*k+q-p)+' سم',ar(q*m2)+' سم',ar(p*q*k)+' سم'],'نسبة التشابه '+ar(p)+' : '+ar(q)+' فالضلع = '+ar(p*k)+' × '+F(ar(q),ar(p))+' = '+ar(q*k))}
+ sc=P([100,200,500,1000]);return mc('مقياس رسم خريطة ١ : '+ar(sc)+'. إذا كانت المسافة على الخريطة '+ar(k)+' سم فالمسافة الحقيقية تساوي:',ar(k*sc)+' سم',[ar(k+sc)+' سم',ar(+(sc/k).toFixed(1))+' سم',ar(k*sc*10)+' سم'],'نضرب في '+ar(sc)+': '+ar(k)+' × '+ar(sc)+' = '+ar(k*sc))}
+function gPi(l){var A=[[36,10],[72,20],[90,25],[108,30],[144,40],[180,50],[54,15],[18,5]],x=P(A),a,b,pc;
+ if(l==1)return mc('قطاع زاويته '+ar(x[0])+'° في تمثيل بالقطاعات الدائرية. نسبته المئوية:',ar(x[1])+'٪',[ar(x[1]+5)+'٪',ar(x[1]*2)+'٪',ar(x[0])+'٪'],F(ar(x[0]),ar(360))+' × '+ar(100)+' = '+ar(x[1])+'٪');
+ if(l==2){a=P([60,90,120]);b=P([60,90,120,30]);return mc('في تمثيل بالقطاعات لثلاث فئات، زاويتا فئتين منها '+ar(a)+'° و '+ar(b)+'°. فزاوية الفئة الثالثة:',ar(360-a-b)+'°',[ar(a+b)+'°',ar(180-a)+'°',ar(360-a)+'°'],'مجموع زوايا القطاعات ٣٦٠°: '+ar(360)+' − '+ar(a+b)+' = '+ar(360-a-b))}
+ pc=P([10,15,20,25,30,40,45,5]);return mc('قطاع نسبته '+ar(pc)+'٪ من الدائرة. فما زاويته؟',ar(pc*3.6)+'°',[ar(pc)+'°',ar(pc*3)+'°',ar(pc*4)+'°'],ar(pc)+'٪ × '+ar(360)+'° = '+ar(pc*3.6)+'°')}
+function gCm(l){var d=P([2,4,5,8,10]),a,v,w,fa,r,vals,o,k;
+ if(l==1){a=R(1,d-1);v=a/d;w=+(v+P([.1,-.1,.2,-.2,.05,-.05])).toFixed(2);if(w<=0||w>=1)w=+(v+.1).toFixed(2);fa=F(ar(a),ar(d));return mc('أيهما أكبر؟',v>w?fa:ar(w),[v>w?ar(w):fa,'متساويان'],'نحوّل الكسر '+fa+' إلى '+ar(+v.toFixed(3))+' ثم نقارن مع '+ar(w))}
+ if(l==2){a=R(1,d-1);v=a/d;w=+(v+P([.1,-.1,.2,-.2,.05,-.05])).toFixed(2);if(w<=0)w=+(v+.15).toFixed(2);fa='−'+F(ar(a),ar(d));return mc('أيهما أكبر؟',w<v?'−'+ar(w):fa,[w<v?fa:'−'+ar(w),'متساويان'],'في العددين السالبين يكون الأكبر هو الأقل قيمة مطلقة: '+ar(+v.toFixed(3))+(w<v?' > ':' < ')+ar(w))}
+ vals=sh([[F(ar(1),ar(2)),.5],['٠٫٤',.4],[F(ar(3),ar(8)),.375],['٠٫٦',.6],[F(ar(2),ar(3)),.667],['٠٫٣',.3],[F(ar(4),ar(5)),.8]]).slice(0,3);
+ r=vals.slice().sort(function(x,y){return x[1]-y[1]}).map(function(x){return x[0]}).join(' < ');
+ o=sh([[0,1,2],[0,2,1],[1,0,2],[1,2,0],[2,0,1],[2,1,0]].map(function(q){return q.map(function(z){return vals[z][0]}).join(' < ')}).filter(function(z){return z!==r}));
+ return mc('الترتيب التصاعدي الصحيح للأعداد '+vals.map(function(x){return x[0]}).join('، ')+' هو:',r,o,'نحوّل كلاً منها إلى كسر عشري ثم نرتّبها من الأصغر إلى الأكبر')}
+function gIr(l){var sq=[4,9,16,25,36,49,64,81,100,121],ns=[2,3,5,6,7,8,10,11,12,13,15,17,18,19,20],n,rat,k,m,r,o;
+ if(l==1){n=R(0,1)?P(sq):P(ns);rat=sq.indexOf(n)>=0;return mc('العدد '+rt(ar(n))+' هو:',rat?'نسبي':'غير نسبي',[rat?'غير نسبي':'نسبي'],rat?rt(ar(n))+' = '+ar(Math.sqrt(n))+' عدد صحيح فهو نسبي':ar(n)+' ليس مربعاً كاملاً فجذره غير نسبي')}
+ if(l==2){k=R(3,9);m=k*k+R(1,k);return R(0,1)?mc('أيهما أكبر؟',rt(ar(m)),[ar(k),'متساويان'],ar(k*k)+' < '+ar(m)+' فإن '+rt(ar(m))+' > '+ar(k)):mc('أيهما أكبر؟',ar(k+1),[rt(ar(m)),'متساويان'],ar(m)+' < '+ar((k+1)*(k+1))+' فإن '+rt(ar(m))+' < '+ar(k+1))}
+ k=R(3,8);r=k*k+R(1,2*k);o=[rt(ar(k*k-R(1,k))),rt(ar((k+1)*(k+1)+R(1,k))),rt(ar((k+2)*(k+2)+1))];return mc('أي الأعداد التالية يقع بين '+ar(k)+' و '+ar(k+1)+'؟',rt(ar(r)),o,ar(k*k)+' < '+ar(r)+' < '+ar((k+1)*(k+1)))}
+function wrapG(i,ng,pr){var og=L[i].g;L[i].g=function(l){return R(1,100)<=pr?ng(l):og(l)}}
+wrapG(2,gCm,55);wrapG(5,gIr,55);wrapG(15,gP,60);wrapG(16,gCv,50);wrapG(17,gCg,60);wrapG(18,gCg,60);wrapG(19,gSm,50);wrapG(21,gPi,55);
+UROW.forEach(function(r,u){L[UGL[u]].g=function(l){return L[R(r[0],r[1])].g(l)}});
+setLoad();evo(0);go(0);setApply();hsh();addEventListener('hashchange',hsh);
+</script>
+</body>
+</html>
